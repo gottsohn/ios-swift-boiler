@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ios swift boiler.xcodeproj">
+      location = "group:/Users/goodson/Documents/iOS/ios swift boiler/ios-swift-boiler.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

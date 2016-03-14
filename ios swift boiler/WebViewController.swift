@@ -8,28 +8,51 @@
 
 import UIKit
 
-class WebViewController: UIViewController {
-
+class WebViewController: UIViewController, UIWebViewDelegate {
+    
+    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var titleView: UINavigationItem!
+    
+    var url:String!
+    var labelText:String!
+    var timer:NSTimer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        webView.delegate = self
+        if url != nil {
+            webView.loadRequest(NSURLRequest(URL: NSURL(string: url)!))
+            titleView.title = labelText
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func timerCallback() {
+        if progressView.progress < 0.9 {
+            progressView.progress += 0.005
+        }
     }
-    */
-
+    
+    func webViewDidStartLoad(webView: UIWebView) {
+        progressView.progress = 0.0
+        progressView.hidden = false
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "timerCallback", userInfo: nil, repeats: true)
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        doneLoading()
+    }
+    
+    func doneLoading() {
+        progressView.progress = 1.0
+        progressView.hidden = true
+        timer?.invalidate()
+    }
+    
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
+        if error != nil {
+            doneLoading()
+            Helpers.showError(self, error: error!)
+        }
+    }
 }

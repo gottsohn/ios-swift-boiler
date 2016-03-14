@@ -8,13 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		002EF68A1C961FBC00EDA636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002EF6891C961FBC00EDA636 /* AppDelegate.swift */; };
-		002EF68C1C961FBC00EDA636 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002EF68B1C961FBC00EDA636 /* ViewController.swift */; };
+		002EF68C1C961FBC00EDA636 /* InitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002EF68B1C961FBC00EDA636 /* InitController.swift */; };
 		002EF68F1C961FBC00EDA636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 002EF68D1C961FBC00EDA636 /* Main.storyboard */; };
 		002EF6921C961FBC00EDA636 /* ios_swift_boiler.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 002EF6901C961FBC00EDA636 /* ios_swift_boiler.xcdatamodeld */; };
 		002EF6941C961FBC00EDA636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 002EF6931C961FBC00EDA636 /* Assets.xcassets */; };
 		002EF6971C961FBC00EDA636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 002EF6951C961FBC00EDA636 /* LaunchScreen.storyboard */; };
 		002EF6A21C961FBC00EDA636 /* ios_swift_boilerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002EF6A11C961FBC00EDA636 /* ios_swift_boilerTests.swift */; };
 		002EF6AD1C961FBC00EDA636 /* ios_swift_boilerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002EF6AC1C961FBC00EDA636 /* ios_swift_boilerUITests.swift */; };
+		004AC95E1C976AC100661601 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004AC95D1C976AC100661601 /* Helpers.swift */; };
+		004AC9611C976ADE00661601 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004AC9601C976ADE00661601 /* LoginViewController.swift */; };
+		004AC9631C976AF300661601 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004AC9621C976AF300661601 /* UserViewController.swift */; };
+		004AC9661C976C5400661601 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 004AC9641C976C5400661601 /* FBSDKCoreKit.framework */; };
+		004AC9671C976C5400661601 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 004AC9651C976C5400661601 /* FBSDKLoginKit.framework */; };
+		8036ABEA81C7E6FCA5800AFF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9810F39DDC386149E31BFA83 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +43,7 @@
 /* Begin PBXFileReference section */
 		002EF6861C961FBC00EDA636 /* ios swift boiler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios swift boiler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		002EF6891C961FBC00EDA636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		002EF68B1C961FBC00EDA636 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		002EF68B1C961FBC00EDA636 /* InitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitController.swift; sourceTree = "<group>"; };
 		002EF68E1C961FBC00EDA636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		002EF6911C961FBC00EDA636 /* ios_swift_boiler.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ios_swift_boiler.xcdatamodel; sourceTree = "<group>"; };
 		002EF6931C961FBC00EDA636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +55,14 @@
 		002EF6A81C961FBC00EDA636 /* ios swift boilerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios swift boilerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		002EF6AC1C961FBC00EDA636 /* ios_swift_boilerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_swift_boilerUITests.swift; sourceTree = "<group>"; };
 		002EF6AE1C961FBC00EDA636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		004AC95D1C976AC100661601 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		004AC9601C976ADE00661601 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		004AC9621C976AF300661601 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		004AC9641C976C5400661601 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		004AC9651C976C5400661601 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		2AA3C04B0C58E8C6C10B4A27 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9810F39DDC386149E31BFA83 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEDAC60349D64BD047FC8053 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +70,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8036ABEA81C7E6FCA5800AFF /* Pods.framework in Frameworks */,
+				004AC9661C976C5400661601 /* FBSDKCoreKit.framework in Frameworks */,
+				004AC9671C976C5400661601 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,10 +96,14 @@
 		002EF67D1C961FBC00EDA636 = {
 			isa = PBXGroup;
 			children = (
+				004AC9641C976C5400661601 /* FBSDKCoreKit.framework */,
+				004AC9651C976C5400661601 /* FBSDKLoginKit.framework */,
 				002EF6881C961FBC00EDA636 /* ios swift boiler */,
 				002EF6A01C961FBC00EDA636 /* ios swift boilerTests */,
 				002EF6AB1C961FBC00EDA636 /* ios swift boilerUITests */,
 				002EF6871C961FBC00EDA636 /* Products */,
+				9AC1B598C51B102D9E37D1D2 /* Pods */,
+				C6BEEA17CC77ACB669177400 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,12 +121,13 @@
 			isa = PBXGroup;
 			children = (
 				002EF6891C961FBC00EDA636 /* AppDelegate.swift */,
-				002EF68B1C961FBC00EDA636 /* ViewController.swift */,
+				004AC95F1C976AC700661601 /* Controllers */,
 				002EF68D1C961FBC00EDA636 /* Main.storyboard */,
 				002EF6931C961FBC00EDA636 /* Assets.xcassets */,
 				002EF6951C961FBC00EDA636 /* LaunchScreen.storyboard */,
 				002EF6981C961FBC00EDA636 /* Info.plist */,
 				002EF6901C961FBC00EDA636 /* ios_swift_boiler.xcdatamodeld */,
+				004AC95D1C976AC100661601 /* Helpers.swift */,
 			);
 			path = "ios swift boiler";
 			sourceTree = "<group>";
@@ -128,6 +150,33 @@
 			path = "ios swift boilerUITests";
 			sourceTree = "<group>";
 		};
+		004AC95F1C976AC700661601 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				002EF68B1C961FBC00EDA636 /* InitController.swift */,
+				004AC9601C976ADE00661601 /* LoginViewController.swift */,
+				004AC9621C976AF300661601 /* UserViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9AC1B598C51B102D9E37D1D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DEDAC60349D64BD047FC8053 /* Pods.debug.xcconfig */,
+				2AA3C04B0C58E8C6C10B4A27 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C6BEEA17CC77ACB669177400 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9810F39DDC386149E31BFA83 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +184,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 002EF6B11C961FBC00EDA636 /* Build configuration list for PBXNativeTarget "ios swift boiler" */;
 			buildPhases = (
+				ABA0BA1F14A7AF828423410B /* Check Pods Manifest.lock */,
 				002EF6821C961FBC00EDA636 /* Sources */,
 				002EF6831C961FBC00EDA636 /* Frameworks */,
 				002EF6841C961FBC00EDA636 /* Resources */,
+				C3EC1634FEA259DDAB9721D5 /* Embed Pods Frameworks */,
+				4DC609BD9726EBC78A0589EF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,14 +309,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4DC609BD9726EBC78A0589EF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABA0BA1F14A7AF828423410B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C3EC1634FEA259DDAB9721D5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		002EF6821C961FBC00EDA636 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				002EF6921C961FBC00EDA636 /* ios_swift_boiler.xcdatamodeld in Sources */,
-				002EF68C1C961FBC00EDA636 /* ViewController.swift in Sources */,
+				004AC9631C976AF300661601 /* UserViewController.swift in Sources */,
+				002EF68C1C961FBC00EDA636 /* InitController.swift in Sources */,
 				002EF68A1C961FBC00EDA636 /* AppDelegate.swift in Sources */,
+				004AC9611C976ADE00661601 /* LoginViewController.swift in Sources */,
+				004AC95E1C976AC100661601 /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,8 +507,13 @@
 		};
 		002EF6B21C961FBC00EDA636 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEDAC60349D64BD047FC8053 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "ios swift boiler/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -416,8 +524,13 @@
 		};
 		002EF6B31C961FBC00EDA636 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AA3C04B0C58E8C6C10B4A27 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "ios swift boiler/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -493,6 +606,7 @@
 				002EF6B31C961FBC00EDA636 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		002EF6B41C961FBC00EDA636 /* Build configuration list for PBXNativeTarget "ios swift boilerTests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +615,7 @@
 				002EF6B61C961FBC00EDA636 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		002EF6B71C961FBC00EDA636 /* Build configuration list for PBXNativeTarget "ios swift boilerUITests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +624,7 @@
 				002EF6B91C961FBC00EDA636 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

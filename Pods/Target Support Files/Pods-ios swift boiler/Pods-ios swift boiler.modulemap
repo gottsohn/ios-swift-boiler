@@ -1,0 +1,6 @@
+framework module Pods_ios_swift_boiler {
+  umbrella header "Pods-ios swift boiler-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -6,10 +6,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Init View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ios_swift_boiler" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="InitViewController" customModule="ios_swift_boiler" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -19,9 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="c5r-jW-ThL" kind="show" identifier="UserView" id="bs2-Rd-1FI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-461" y="-1251"/>
         </scene>
         <!--User Tab-->
         <scene sceneID="5Sj-Xu-sJv">
@@ -166,9 +170,9 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="dfL-NA-s5P"/>
                                         <exclude reference="fqf-ir-rYQ"/>
                                         <exclude reference="qNn-Kg-OJE"/>
-                                        <exclude reference="dfL-NA-s5P"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -186,6 +190,9 @@
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" image="settings"/>
+                                <connections>
+                                    <segue destination="6fh-16-eGE" kind="show" identifier="SettingsView" id="vDN-1G-D4h"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -223,11 +230,12 @@
                         <outlet property="profileImageView" destination="UwJ-VD-7Rf" id="3jb-BS-7Ye"/>
                         <outlet property="userBackgroundView" destination="bSe-mr-vHT" id="ASl-rx-lUR"/>
                         <outlet property="usernameLabel" destination="q2S-pZ-WPz" id="01a-Dv-y6l"/>
+                        <segue destination="mtH-fR-jzO" kind="show" identifier="LoginView" id="1I3-XW-ark"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fjn-eX-W7N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-452" y="-2679"/>
+            <point key="canvasLocation" x="368" y="-1499"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="o5Q-1p-ESi">
@@ -431,8 +439,8 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="vMW-xN-uAM"/>
                                         <exclude reference="Dn3-ON-730"/>
+                                        <exclude reference="vMW-xN-uAM"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -501,14 +509,14 @@
                                 <exclude reference="6ZQ-3J-W0p"/>
                                 <exclude reference="gre-5Q-f6C"/>
                                 <exclude reference="j6x-SH-4SC"/>
-                                <exclude reference="Rgw-t9-0fR"/>
-                                <exclude reference="kWm-gD-AmS"/>
                                 <exclude reference="9tB-bj-J2W"/>
-                                <exclude reference="eMj-z2-xFQ"/>
-                                <exclude reference="ODa-N0-iqy"/>
-                                <exclude reference="ytI-Ks-er3"/>
-                                <exclude reference="qwp-17-frb"/>
                                 <exclude reference="K19-dX-ccy"/>
+                                <exclude reference="ODa-N0-iqy"/>
+                                <exclude reference="Rgw-t9-0fR"/>
+                                <exclude reference="eMj-z2-xFQ"/>
+                                <exclude reference="kWm-gD-AmS"/>
+                                <exclude reference="qwp-17-frb"/>
+                                <exclude reference="ytI-Ks-er3"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -528,7 +536,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SvQ-GI-sgu" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1300" y="-1900"/>
+            <point key="canvasLocation" x="448" y="-652"/>
         </scene>
         <!--Settings-->
         <scene sceneID="LoQ-mh-x1K">
@@ -653,7 +661,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aSz-CM-QFO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1194" y="-2679"/>
+            <point key="canvasLocation" x="1154" y="-1611"/>
         </scene>
     </scenes>
     <resources>

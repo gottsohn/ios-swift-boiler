@@ -80,6 +80,46 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginWithTwitter (sender: UIButton) {
+        let oauthswift = OAuth1Swift(
+            consumerKey:    "VkAm4TtL00rNMBRwPpahJq79F",
+            consumerSecret: Const.TWITTER_SECRET,
+            requestTokenUrl: "https://api.twitter.com/oauth/request_token",
+            authorizeUrl:    "https://api.twitter.com/oauth/authorize",
+            accessTokenUrl:  "https://api.twitter.com/oauth/access_token"
+        )
+        
+        loading(true)
+        oauthswift.authorizeWithCallbackURL(
+            NSURL(string: "replay://oauth-callback/twitter")!,
+            success: { credential, response, parameters in
+                var params:[String:String] = [:]
+                oauthswift.client.get("https://api.twitter.com/1.1/account/verify_credentials.json", parameters: [:], headers: nil, success: { data, response in
+                    let result:JSON = JSON(data: data)
+                    params[Const.KEY_IMG] = result[Const.KEY_TWITTER_IMG].stringValue
+                    params[Const.KEY_BG_IMG] = result[Const.KEY_TWITTER_BG_IMG].stringValue
+                    params[Const.KEY_NAME] = result[Const.KEY_NAME].stringValue
+                    params[Const.KEY_EMAIL] = ""
+                    params[Const.KEY_USER_ID] = result[Const.KEY_TWITTER_ID].stringValue
+                    params[Const.KEY_OAUTH_TOKEN] = credential.oauth_token
+                    params[Const.KEY_OAUTH_TOKEN_SECRET] = credential.oauth_token_secret
+                    params[Const.KEY_PLATFORM] = Const.Platforms.Twitter.rawValue
+                    params[Const.KEY_DESCRIPTION] = result[Const.KEY_TWITTER_DESCRIPTION].stringValue
+                    params[Const.KEY_USERNAME] = result[Const.KEY_TWITTER_HANDLE].stringValue
+                    self.processUser(params)
+                    }, failure: { error in
+                        Helpers.showError(self, error: error)
+                        self.loading(false)
+                })
+            },
+            failure: { error in
+                print(error)
+                Helpers.showError(self, error: error)
+                self.loading(false)
+            }
+        )
+    }
+    
+    func processUser(user:[String:String]) {
         
     }
     

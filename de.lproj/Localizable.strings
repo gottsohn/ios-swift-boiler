@@ -7,6 +7,7 @@
 */
 CLOSE = "Schließen";
 ERROR = "Fehler";
+ERROR_MESSAGE = "Fehler Abschluss Anfrage";
 DONE = "Fertig";
 CANCEL = "Abbrechen";
 LOGOUT = "Ausloggen";

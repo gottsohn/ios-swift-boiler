@@ -91,9 +91,79 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    
     // Action from button to login with Facebook
     @IBAction func facebookAuth (sender: UIButton) {
+        loading(true)
+        loginToFacebookWithSuccess({ accessToken in
+            self.getFBUser(accessToken)
+            }) { error in
+                Helpers.showError(self, error: error)
+                self.loading(false)
+        }
+    }
+    
+    func getFBUser (accessToken:String) {
+        let req = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,name,bio,cover"], tokenString: accessToken, version: nil, HTTPMethod: "GET")
         
+        req.startWithCompletionHandler({ (connection, result, error : NSError!) -> Void in
+            if error == nil {
+                let userId = result[Const.KEY_ID] as! String;
+                let cover:NSDictionary =  result[Const.KEY_FB_COVER_IMG] as! NSDictionary
+                let bio: String = result[Const.KEY_FB_BIO] != nil ? result[Const.KEY_FB_BIO] as! String: "Diese ist mein Profil Beschreibung"
+                
+                let bg_img = cover["source"] as? String ?? ""
+                let params:[String: String] = [
+                    Const.KEY_NAME : result[Const.KEY_NAME] as! String,
+                    Const.KEY_EMAIL : result[Const.KEY_EMAIL] as! String,
+                    Const.KEY_IMG : "https://graph.facebook.com/\(userId)/picture?width=200&height=200",
+                    Const.KEY_USER_ID : userId,
+                    Const.KEY_BG_IMG: bg_img,
+                    Const.KEY_DESCRIPTION: bio,
+                    Const.KEY_OAUTH_TOKEN: accessToken,
+                    Const.KEY_OAUTH_TOKEN_SECRET: "",
+                    Const.KEY_PLATFORM: Const.Platforms.Facebook.rawValue,
+                    Const.KEY_USERNAME: ""
+                ]
+                
+                self.saveUser(params)
+            } else {
+                Helpers.showError(self, error: error)
+                self.loading(false)
+            }
+        })
+    }
+    
+    func loginToFacebookWithSuccess(successBlock: (accessToken:String) -> (), failureBlock: (error:NSError?) -> ()) {
+        
+        if FBSDKAccessToken.currentAccessToken() != nil {
+            return successBlock(accessToken: FBSDKAccessToken.currentAccessToken().tokenString)
+        }
+        
+        let facebookReadPermissions = ["public_profile", "email", "user_friends", "user_about_me"]
+        FBSDKLoginManager().logInWithReadPermissions(facebookReadPermissions, fromViewController: self, handler: { (result:FBSDKLoginManagerLoginResult!, error:NSError!) -> Void in
+            if error != nil {
+                FBSDKLoginManager().logOut()
+                failureBlock(error: error)
+            } else if result.isCancelled {
+                failureBlock(error: nil)
+            } else {
+                var allPermsGranted = true
+                let grantedPermissions = result.grantedPermissions.map( {"\($0)"} )
+                for permission in facebookReadPermissions {
+                    if !grantedPermissions.contains(permission) {
+                        allPermsGranted = false
+                        break
+                    }
+                }
+                if allPermsGranted {
+                    // let fbUserID = result.token.userID
+                    successBlock(accessToken: result.token.tokenString)
+                } else {
+                    failureBlock(error: error)
+                }
+            }
+        })
     }
     
     // Close View

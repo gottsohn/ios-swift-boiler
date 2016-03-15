@@ -30,7 +30,8 @@ class SettingsTableViewController: UITableViewController {
         super.viewDidAppear(animated)
         if Helpers.currentUser != nil, let loginCell:UITableViewCell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) {
             (loginCell.viewWithTag(1) as! UILabel).text = NSLocalizedString("LOGOUT", comment: "Logout")
-            (loginCell.viewWithTag(2) as! UILabel).text = Helpers.currentUser[Const.KEY_USERNAME].stringValue
+            let name:String =  Helpers.currentUser[Const.KEY_USERNAME].string ??  Helpers.currentUser[Const.KEY_NAME].stringValue
+            (loginCell.viewWithTag(2) as! UILabel).text = name.characters.count > 0 ? name : NSLocalizedString("USERNAME", comment: "Username")
         }
         
         if let versionCell:UITableViewCell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 1)) {

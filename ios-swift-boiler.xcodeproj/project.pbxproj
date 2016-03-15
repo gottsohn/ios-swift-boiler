@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000E23691C98887A00717D5B /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 000E23681C98887A00717D5B /* Assets */; };
 		002EF68A1C961FBC00EDA636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002EF6891C961FBC00EDA636 /* AppDelegate.swift */; };
-		002EF68C1C961FBC00EDA636 /* InitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002EF68B1C961FBC00EDA636 /* InitController.swift */; };
 		002EF68F1C961FBC00EDA636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 002EF68D1C961FBC00EDA636 /* Main.storyboard */; };
 		002EF6921C961FBC00EDA636 /* ios_swift_boiler.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 002EF6901C961FBC00EDA636 /* ios_swift_boiler.xcdatamodeld */; };
 		002EF6941C961FBC00EDA636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 002EF6931C961FBC00EDA636 /* Assets.xcassets */; };
@@ -23,6 +23,11 @@
 		004AC9691C9770A600661601 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004AC9681C9770A600661601 /* Const.swift */; };
 		004AC96B1C9772EA00661601 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004AC96A1C9772EA00661601 /* WebViewController.swift */; };
 		004AC96E1C9773A600661601 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004AC96D1C9773A600661601 /* Users.swift */; };
+		004AC9771C9874CA00661601 /* MarqueeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004AC9761C9874CA00661601 /* MarqueeLabel.swift */; };
+		004AC97A1C98754B00661601 /* TextHeadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004AC9781C98754B00661601 /* TextHeadingView.swift */; };
+		004AC97B1C98754B00661601 /* TextHeadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004AC9791C98754B00661601 /* TextHeadingView.xib */; };
+		004AC97D1C987C3800661601 /* BackgroundGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004AC97C1C987C3800661601 /* BackgroundGradientView.swift */; };
+		004AC9801C987EC500661601 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004AC97F1C987EC500661601 /* SettingsViewController.swift */; };
 		8036ABEA81C7E6FCA5800AFF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9810F39DDC386149E31BFA83 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,9 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		000E23681C98887A00717D5B /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
 		002EF6861C961FBC00EDA636 /* ios-swift-boiler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-swift-boiler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		002EF6891C961FBC00EDA636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		002EF68B1C961FBC00EDA636 /* InitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitController.swift; sourceTree = "<group>"; };
 		002EF68E1C961FBC00EDA636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		002EF6911C961FBC00EDA636 /* ios_swift_boiler.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ios_swift_boiler.xcdatamodel; sourceTree = "<group>"; };
 		002EF6931C961FBC00EDA636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,6 +71,11 @@
 		004AC9681C9770A600661601 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		004AC96A1C9772EA00661601 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		004AC96D1C9773A600661601 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		004AC9761C9874CA00661601 /* MarqueeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarqueeLabel.swift; sourceTree = "<group>"; };
+		004AC9781C98754B00661601 /* TextHeadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextHeadingView.swift; sourceTree = "<group>"; };
+		004AC9791C98754B00661601 /* TextHeadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextHeadingView.xib; sourceTree = "<group>"; };
+		004AC97C1C987C3800661601 /* BackgroundGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundGradientView.swift; sourceTree = "<group>"; };
+		004AC97F1C987EC500661601 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2AA3C04B0C58E8C6C10B4A27 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9810F39DDC386149E31BFA83 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEDAC60349D64BD047FC8053 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,7 +114,7 @@
 			children = (
 				004AC9641C976C5400661601 /* FBSDKCoreKit.framework */,
 				004AC9651C976C5400661601 /* FBSDKLoginKit.framework */,
-				002EF6881C961FBC00EDA636 /* ios swift boiler */,
+				002EF6881C961FBC00EDA636 /* ios-swift-boiler */,
 				002EF6A01C961FBC00EDA636 /* ios swift boilerTests */,
 				002EF6AB1C961FBC00EDA636 /* ios swift boilerUITests */,
 				002EF6871C961FBC00EDA636 /* Products */,
@@ -123,9 +133,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		002EF6881C961FBC00EDA636 /* ios swift boiler */ = {
+		002EF6881C961FBC00EDA636 /* ios-swift-boiler */ = {
 			isa = PBXGroup;
 			children = (
+				000E23681C98887A00717D5B /* Assets */,
+				004AC9751C9874B000661601 /* Custom Views */,
 				004AC96C1C97738D00661601 /* Models */,
 				002EF6891C961FBC00EDA636 /* AppDelegate.swift */,
 				004AC95F1C976AC700661601 /* Controllers */,
@@ -137,6 +149,7 @@
 				004AC95D1C976AC100661601 /* Helpers.swift */,
 				004AC9681C9770A600661601 /* Const.swift */,
 			);
+			name = "ios-swift-boiler";
 			path = "ios swift boiler";
 			sourceTree = "<group>";
 		};
@@ -161,10 +174,10 @@
 		004AC95F1C976AC700661601 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				002EF68B1C961FBC00EDA636 /* InitController.swift */,
 				004AC9601C976ADE00661601 /* LoginViewController.swift */,
 				004AC9621C976AF300661601 /* UserViewController.swift */,
 				004AC96A1C9772EA00661601 /* WebViewController.swift */,
+				004AC97F1C987EC500661601 /* SettingsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -175,6 +188,25 @@
 				004AC96D1C9773A600661601 /* Users.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		004AC9751C9874B000661601 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				004AC97E1C987C5A00661601 /* Text Heading View */,
+				004AC9761C9874CA00661601 /* MarqueeLabel.swift */,
+				004AC97C1C987C3800661601 /* BackgroundGradientView.swift */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		004AC97E1C987C5A00661601 /* Text Heading View */ = {
+			isa = PBXGroup;
+			children = (
+				004AC9781C98754B00661601 /* TextHeadingView.swift */,
+				004AC9791C98754B00661601 /* TextHeadingView.xib */,
+			);
+			name = "Text Heading View";
 			sourceTree = "<group>";
 		};
 		9AC1B598C51B102D9E37D1D2 /* Pods */ = {
@@ -304,8 +336,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				000E23691C98887A00717D5B /* Assets in Resources */,
 				002EF6971C961FBC00EDA636 /* LaunchScreen.storyboard in Resources */,
 				002EF6941C961FBC00EDA636 /* Assets.xcassets in Resources */,
+				004AC97B1C98754B00661601 /* TextHeadingView.xib in Resources */,
 				002EF68F1C961FBC00EDA636 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,13 +413,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				004AC97D1C987C3800661601 /* BackgroundGradientView.swift in Sources */,
 				002EF6921C961FBC00EDA636 /* ios_swift_boiler.xcdatamodeld in Sources */,
 				004AC96E1C9773A600661601 /* Users.swift in Sources */,
 				004AC9631C976AF300661601 /* UserViewController.swift in Sources */,
-				002EF68C1C961FBC00EDA636 /* InitController.swift in Sources */,
 				002EF68A1C961FBC00EDA636 /* AppDelegate.swift in Sources */,
 				004AC9611C976ADE00661601 /* LoginViewController.swift in Sources */,
+				004AC97A1C98754B00661601 /* TextHeadingView.swift in Sources */,
 				004AC95E1C976AC100661601 /* Helpers.swift in Sources */,
+				004AC9771C9874CA00661601 /* MarqueeLabel.swift in Sources */,
+				004AC9801C987EC500661601 /* SettingsViewController.swift in Sources */,
 				004AC9691C9770A600661601 /* Const.swift in Sources */,
 				004AC96B1C9772EA00661601 /* WebViewController.swift in Sources */,
 			);
@@ -478,7 +515,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -517,7 +554,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -537,8 +574,9 @@
 				INFOPLIST_FILE = "ios swift boiler/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.godson.ios-swift-boiler";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gottsohn.ios-swift-boiler";
 				PRODUCT_NAME = "ios-swift-boiler";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -554,8 +592,9 @@
 				INFOPLIST_FILE = "ios swift boiler/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.godson.ios-swift-boiler";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gottsohn.ios-swift-boiler";
 				PRODUCT_NAME = "ios-swift-boiler";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

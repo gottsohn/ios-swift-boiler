@@ -1,0 +1,75 @@
+
+/* Class = "UIButton"; normalTitle = "  Twitter"; ObjectID = "2Fs-5F-oK2"; */
+"2Fs-5F-oK2.normalTitle" = "  Twitter";
+
+/* Class = "UILabel"; text = "--"; ObjectID = "5jx-Cw-Ie2"; */
+"5jx-Cw-Ie2.text" = "--";
+
+/* Class = "UILabel"; text = "Vollname"; ObjectID = "8F0-PW-r1d"; */
+"8F0-PW-r1d.text" = "Vollname";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "8Ov-WD-3dZ"; */
+"8Ov-WD-3dZ.title" = "Title";
+
+/* Class = "UILabel"; text = "About"; ObjectID = "9Mb-NW-Ob5"; */
+"9Mb-NW-Ob5.text" = "About";
+
+/* Class = "UILabel"; text = "Anmelden zu sehen guten Zeug"; ObjectID = "GQZ-pz-Mgj"; */
+"GQZ-pz-Mgj.text" = "Anmelden zu sehen guten Zeug";
+
+/* Class = "UILabel"; text = "Swift Über Alles"; ObjectID = "HK6-3O-67K"; */
+"HK6-3O-67K.text" = "Swift Über Alles";
+
+/* Class = "UIButton"; normalTitle = "Later"; ObjectID = "ISt-Wd-hzq"; */
+"ISt-Wd-hzq.normalTitle" = "Later";
+
+/* Class = "UILabel"; text = "Anmelden"; ObjectID = "Irh-1b-AVi"; */
+"Irh-1b-AVi.text" = "Anmelden";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "PBH-Aw-4xw"; */
+"PBH-Aw-4xw.title" = "Profile";
+
+/* Class = "UITextView"; text = "Login to view and manage your profile."; ObjectID = "Qtq-Hv-0va"; */
+"Qtq-Hv-0va.text" = "Login to view and manage your profile.";
+
+/* Class = "UITableViewSection"; headerTitle = "User Account"; ObjectID = "SiU-2K-tYt"; */
+"SiU-2K-tYt.headerTitle" = "User Account";
+
+/* Class = "UILabel"; text = "blog.godon.com.ng"; ObjectID = "W6C-zC-Ufw"; */
+"W6C-zC-Ufw.text" = "blog.godon.com.ng";
+
+/* Class = "UIViewController"; title = "Playlist Tab View"; ObjectID = "c5r-jW-ThL"; */
+"c5r-jW-ThL.title" = "Playlist Tab View";
+
+/* Class = "UITableViewSection"; footerTitle = "Visit blog.godson.com.ng from your Desktop Device"; ObjectID = "fLN-Pm-vYc"; */
+"fLN-Pm-vYc.footerTitle" = "Visit blog.godson.com.ng from your Desktop Device";
+
+/* Class = "UITableViewSection"; headerTitle = "Application"; ObjectID = "fLN-Pm-vYc"; */
+"fLN-Pm-vYc.headerTitle" = "Application";
+
+/* Class = "UILabel"; text = "Login"; ObjectID = "jYM-eL-FSH"; */
+"jYM-eL-FSH.text" = "Login";
+
+/* Class = "UILabel"; text = "Version"; ObjectID = "knS-oU-Qfg"; */
+"knS-oU-Qfg.text" = "Version";
+
+/* Class = "UILabel"; text = " "; ObjectID = "mk1-O4-449"; */
+"mk1-O4-449.text" = " ";
+
+/* Class = "UIViewController"; title = "Login View Controller"; ObjectID = "mtH-fR-jzO"; */
+"mtH-fR-jzO.title" = "Login View Controller";
+
+/* Class = "UILabel"; text = "Beschreibung"; ObjectID = "myk-am-U7V"; */
+"myk-am-U7V.text" = "Beschreibung";
+
+/* Class = "UILabel"; text = "Terms and Conditions"; ObjectID = "oOu-MY-64a"; */
+"oOu-MY-64a.text" = "Terms and Conditions";
+
+/* Class = "UILabel"; text = "Benutzername"; ObjectID = "q2S-pZ-WPz"; */
+"q2S-pZ-WPz.text" = "Benutzername";
+
+/* Class = "UILabel"; text = "Schmetterling ist schön"; ObjectID = "qqf-Ob-bJX"; */
+"qqf-Ob-bJX.text" = "Schmetterling ist schön";
+
+/* Class = "UIButton"; normalTitle = "Go To Login"; ObjectID = "y3S-2s-Cc1"; */
+"y3S-2s-Cc1.normalTitle" = "Go To Login";

@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  ios-swift-boiler
+
+  Created by Godson Ukpere on 3/15/16.
+  Copyright © 2016 Godson Ukpere. All rights reserved.
+*/
+CLOSE = "Schließen";
+ERROR = "Fehler";
+DONE = "Fertig";
+CANCEL = "Abbrechen";
+LOGOUT = "Ausloggen";
+CONFIRM = "Zulassen";
+ARE_YOU_SURE = "Bist du sicher?";

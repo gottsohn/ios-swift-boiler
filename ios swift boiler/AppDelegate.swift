@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if error == nil && result != nil {
                 let user = result![0]
                 var userJSON:JSON = JSON([:])
-                userJSON[Const.KEY_PLATFORM].intValue = user.valueForKey(Const.KEY_PLATFORM) as! Int
+                userJSON[Const.KEY_PLATFORM].stringValue = user.valueForKey(Const.KEY_PLATFORM) as! String
                 userJSON[Const.KEY_USER_ID].stringValue = user.valueForKey(Const.KEY_USER_ID) as! String
                 userJSON[Const.KEY_USERNAME].stringValue = user.valueForKey(Const.KEY_USERNAME) as! String
                 userJSON[Const.KEY_IMG].stringValue = user.valueForKey(Const.KEY_IMG) as! String

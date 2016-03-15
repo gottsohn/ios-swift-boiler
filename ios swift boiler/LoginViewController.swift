@@ -13,7 +13,7 @@ import FBSDKLoginKit
 import CoreData
 import SwiftyJSON
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
     
     var player:AVPlayer!
     var avPlayerLayer:AVPlayerLayer!
@@ -26,11 +26,26 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        playBgVideo()
+        
+        // Add Swipe to close to View
+        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "panRecognized:")
+        panGestureRecognizer.delegate = self
+        view.addGestureRecognizer(panGestureRecognizer)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.player?.play()
+        player?.play()
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,6 +55,7 @@ class LoginViewController: UIViewController {
         notificationCenter.removeObserver(self)
     }
     
+    // Swipe to close processor
     func panRecognized(recognizer:UIPanGestureRecognizer) {
         view.frame.origin.y = recognizer.translationInView(view).y
         if recognizer.state == .Began {
@@ -66,7 +82,7 @@ class LoginViewController: UIViewController {
     }
     
     // Loading indicator that displays during loading
-    private func loading(isLoading:Bool) {
+    private func loading(isLoading:Bool = true) {
         controlView.hidden = isLoading
         if isLoading {
             loadingIndicator.startAnimating()
@@ -75,25 +91,34 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func loginWithFacebook (sender: UIButton) {
+    // Action from button to login with Facebook
+    @IBAction func facebookAuth (sender: UIButton) {
         
     }
     
-    @IBAction func loginWithTwitter (sender: UIButton) {
+    // Close View
+    @IBAction func goHome (sender: UIButton) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // Action from button to login with Twitter
+    @IBAction func twitterAuth (sender: UIButton) {
         let oauthswift = OAuth1Swift(
-            consumerKey:    "VkAm4TtL00rNMBRwPpahJq79F",
+            // They keys are stored in the `Const` class
+            consumerKey:    Const.TWITTER_KEY,
             consumerSecret: Const.TWITTER_SECRET,
             requestTokenUrl: "https://api.twitter.com/oauth/request_token",
             authorizeUrl:    "https://api.twitter.com/oauth/authorize",
             accessTokenUrl:  "https://api.twitter.com/oauth/access_token"
         )
         
-        loading(true)
+        // Show the loading indicator
+        loading()
         oauthswift.authorizeWithCallbackURL(
-            NSURL(string: "replay://oauth-callback/twitter")!,
+            NSURL(string: "ios-swift-boiler://oauth-callback/twitter")!,
             success: { credential, response, parameters in
-                var params:[String:String] = [:]
                 oauthswift.client.get("https://api.twitter.com/1.1/account/verify_credentials.json", parameters: [:], headers: nil, success: { data, response in
+                    var params:[String:String] = [:]
                     let result:JSON = JSON(data: data)
                     params[Const.KEY_IMG] = result[Const.KEY_TWITTER_IMG].stringValue
                     params[Const.KEY_BG_IMG] = result[Const.KEY_TWITTER_BG_IMG].stringValue
@@ -105,12 +130,13 @@ class LoginViewController: UIViewController {
                     params[Const.KEY_PLATFORM] = Const.Platforms.Twitter.rawValue
                     params[Const.KEY_DESCRIPTION] = result[Const.KEY_TWITTER_DESCRIPTION].stringValue
                     params[Const.KEY_USERNAME] = result[Const.KEY_TWITTER_HANDLE].stringValue
-                    self.processUser(params)
+                    self.saveUser(params)
                     }, failure: { error in
                         Helpers.showError(self, error: error)
                         self.loading(false)
                 })
             },
+            
             failure: { error in
                 print(error)
                 Helpers.showError(self, error: error)
@@ -119,12 +145,21 @@ class LoginViewController: UIViewController {
         )
     }
     
-    func processUser(user:[String:String]) {
-        
+    func saveUser(user:[String:String]) {
+        Users.saveUser(authUser: JSON(user)) { error in
+            if error == nil {
+                // Send a broadcast to inform concerning listeners that the user object as changed
+                self.notificationCenter.postNotificationName(Const.NOTIFICATION_USER_AUTH, object: nil)
+                // Close the view
+                self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                Helpers.showError(self, error: error)
+            }
+        }
     }
     
     func playBgVideo() {
-        let path = NSBundle.mainBundle().pathForResource("Assets/videos/background", ofType:"mp4")
+        let path = NSBundle.mainBundle().pathForResource("Assets/background", ofType:"mp4")
         let url:NSURL = NSURL.fileURLWithPath(path!)
         player = AVPlayer(URL: url)
         avPlayerLayer = AVPlayerLayer(player: player)
@@ -136,7 +171,7 @@ class LoginViewController: UIViewController {
             name: AVPlayerItemDidPlayToEndTimeNotification,
             object: player?.currentItem)
         
-        player.volume = 0.04
+        player.volume = 0
         player.play()
     }
     

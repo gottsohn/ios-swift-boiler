@@ -12,7 +12,7 @@
 "8Ov-WD-3dZ.title" = "Title";
 
 /* Class = "UILabel"; text = "About"; ObjectID = "9Mb-NW-Ob5"; */
-"9Mb-NW-Ob5.text" = "About";
+"9Mb-NW-Ob5.text" = "Über";
 
 /* Class = "UILabel"; text = "Anmelden zu sehen guten Zeug"; ObjectID = "GQZ-pz-Mgj"; */
 "GQZ-pz-Mgj.text" = "Anmelden zu sehen guten Zeug";
@@ -21,19 +21,19 @@
 "HK6-3O-67K.text" = "Swift Über Alles";
 
 /* Class = "UIButton"; normalTitle = "Later"; ObjectID = "ISt-Wd-hzq"; */
-"ISt-Wd-hzq.normalTitle" = "Later";
+"ISt-Wd-hzq.normalTitle" = "Später";
 
 /* Class = "UILabel"; text = "Anmelden"; ObjectID = "Irh-1b-AVi"; */
 "Irh-1b-AVi.text" = "Anmelden";
 
 /* Class = "UITabBarItem"; title = "Profile"; ObjectID = "PBH-Aw-4xw"; */
-"PBH-Aw-4xw.title" = "Profile";
+"PBH-Aw-4xw.title" = "Profil";
 
 /* Class = "UITextView"; text = "Login to view and manage your profile."; ObjectID = "Qtq-Hv-0va"; */
-"Qtq-Hv-0va.text" = "Login to view and manage your profile.";
+"Qtq-Hv-0va.text" = "Anmelden zu anzeigen und bearbeiten Ihre Profil";
 
 /* Class = "UITableViewSection"; headerTitle = "User Account"; ObjectID = "SiU-2K-tYt"; */
-"SiU-2K-tYt.headerTitle" = "User Account";
+"SiU-2K-tYt.headerTitle" = "Benutzer Konto";
 
 /* Class = "UILabel"; text = "blog.godon.com.ng"; ObjectID = "W6C-zC-Ufw"; */
 "W6C-zC-Ufw.text" = "blog.godon.com.ng";
@@ -63,7 +63,7 @@
 "myk-am-U7V.text" = "Beschreibung";
 
 /* Class = "UILabel"; text = "Terms and Conditions"; ObjectID = "oOu-MY-64a"; */
-"oOu-MY-64a.text" = "Terms and Conditions";
+"oOu-MY-64a.text" = "Terms und Conditions";
 
 /* Class = "UILabel"; text = "Benutzername"; ObjectID = "q2S-pZ-WPz"; */
 "q2S-pZ-WPz.text" = "Benutzername";

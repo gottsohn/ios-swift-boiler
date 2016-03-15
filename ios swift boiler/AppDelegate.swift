@@ -48,8 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 NSNotificationCenter.defaultCenter().postNotificationName(Const.NOTIFICATION_USER_AUTH, object: nil)
             }
-            
-            print(result)
         }
     }
     

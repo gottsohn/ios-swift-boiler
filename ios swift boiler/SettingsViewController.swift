@@ -27,7 +27,8 @@ class SettingsTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        if Helpers.currentUser != nil, let loginCell:UITableViewCell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 2, inSection: 0)) {
+        super.viewDidAppear(animated)
+        if Helpers.currentUser != nil, let loginCell:UITableViewCell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) {
             (loginCell.viewWithTag(1) as! UILabel).text = NSLocalizedString("LOGOUT", comment: "Logout")
             (loginCell.viewWithTag(2) as! UILabel).text = Helpers.currentUser[Const.KEY_USERNAME].stringValue
         }

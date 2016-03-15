@@ -79,7 +79,7 @@ class Users: NSManagedObject {
                     user.oauth_token = authUser[Const.KEY_OAUTH_TOKEN].stringValue
                     user.oauth_token_secret = authUser[Const.KEY_OAUTH_TOKEN_SECRET].stringValue
                     user.email = authUser[Const.KEY_EMAIL].stringValue
-                    user.user_id = authUser[Const.KEY_ID].stringValue
+                    user.user_id = authUser[Const.KEY_USER_ID].stringValue
                     user.username = authUser[Const.KEY_USERNAME].stringValue
                     user.img = authUser[Const.KEY_IMG].stringValue
                     user.bg_img = authUser[Const.KEY_BG_IMG].stringValue

@@ -55,6 +55,7 @@
 		000E236B1C989B7A00717D5B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		000E23741C98A92600717D5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		000E23761C98A92B00717D5B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		000E23781C98C0DB00717D5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		002EF6861C961FBC00EDA636 /* ios-swift-boiler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-swift-boiler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		002EF6891C961FBC00EDA636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		002EF68E1C961FBC00EDA636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -482,6 +483,7 @@
 			children = (
 				002EF68E1C961FBC00EDA636 /* Base */,
 				000E236A1C989B7A00717D5B /* de */,
+				000E23781C98C0DB00717D5B /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

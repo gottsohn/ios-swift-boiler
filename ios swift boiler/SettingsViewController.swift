@@ -89,7 +89,7 @@ class SettingsTableViewController: UITableViewController {
         case 1:
             switch indexPath.row {
             case 1:
-                url = "http://blog.godson.com.ng/404"
+                url = "http://blog.godson.com.ng/terms-and-conditions/"
                 labelText =  NSLocalizedString("TNC", comment: "TNC")
                 performSegueWithIdentifier(Const.SEGUE_WEB_VIEW, sender: self)
             case 2:

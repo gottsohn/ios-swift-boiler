@@ -13,3 +13,4 @@ LOGOUT = "Ausloggen";
 CONFIRM = "Zulassen";
 ARE_YOU_SURE = "Bist du sicher?";
 USERNAME = "<benutzer>";
+TNC = "Geschäftsbedingungen";

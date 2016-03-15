@@ -65,6 +65,7 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
+            <!-- BEGIN: Permit non-SSL access to the following domains -->
 			<key>twimg.com</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
@@ -87,6 +88,7 @@
                 <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
                 <false/>
             </dict>
+            <!-- END: Permit non-SSL access to the following domains -->
 			<key>akamaihd.net</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>

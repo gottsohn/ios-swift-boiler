@@ -13,3 +13,4 @@ LOGOUT = "Logout";
 CONFIRM = "Confirm";
 ARE_YOU_SURE = "Are you sure?";
 USERNAME = "<user>";
+TNC = "Terms and Conditions";

@@ -25,7 +25,7 @@
                                         <rect key="frame" x="220" y="70" width="160" height="160"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3S-2s-Cc1">
-                                        <rect key="frame" x="100" y="340" width="400" height="34"/>
+                                        <rect key="frame" x="10" y="340" width="570" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Go To Login">
                                             <color key="titleColor" red="1" green="0.53333333329999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -50,9 +50,9 @@
                                     <constraint firstItem="QkK-6n-q5h" firstAttribute="centerY" secondItem="Usg-Mv-vhs" secondAttribute="centerY" multiplier="1:2" id="1zT-p1-7QW"/>
                                     <constraint firstItem="y3S-2s-Cc1" firstAttribute="top" secondItem="Qtq-Hv-0va" secondAttribute="bottom" constant="30" id="63D-xb-igk"/>
                                     <constraint firstItem="Qtq-Hv-0va" firstAttribute="centerX" secondItem="Usg-Mv-vhs" secondAttribute="centerX" id="PcX-HY-bxf"/>
-                                    <constraint firstItem="y3S-2s-Cc1" firstAttribute="leading" secondItem="Usg-Mv-vhs" secondAttribute="leading" constant="100" id="QUs-Lf-8Zv"/>
+                                    <constraint firstItem="y3S-2s-Cc1" firstAttribute="leading" secondItem="Usg-Mv-vhs" secondAttribute="leading" constant="10" id="QUs-Lf-8Zv"/>
                                     <constraint firstItem="QkK-6n-q5h" firstAttribute="centerX" secondItem="Usg-Mv-vhs" secondAttribute="centerX" id="bXX-aH-kP6"/>
-                                    <constraint firstAttribute="trailing" secondItem="y3S-2s-Cc1" secondAttribute="trailing" constant="100" id="tlC-3Q-3YQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="y3S-2s-Cc1" secondAttribute="trailing" constant="20" id="tlC-3Q-3YQ"/>
                                     <constraint firstItem="Qtq-Hv-0va" firstAttribute="top" secondItem="QkK-6n-q5h" secondAttribute="bottom" constant="30" id="wjH-bP-h2j"/>
                                 </constraints>
                             </view>

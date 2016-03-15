@@ -8,8 +8,10 @@
 
 import UIKit
 import CoreData
-class Helpers {
+import SwiftyJSON
 
+class Helpers {
+    static var currentUser: JSON!
     static func showDialog(viewController:UIViewController, message:String, title:String, callbackOk:((action:UIAlertAction) -> Void)? = nil, callback:((action:UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         let action = UIAlertAction(title: NSLocalizedString("CLOSE", comment: "Close"), style: .Default, handler: callback)
@@ -20,6 +22,17 @@ class Helpers {
         }
         
         viewController.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    static var appVersion:String {
+        get {
+            if NSBundle.mainBundle().infoDictionary != nil,
+            let appVersion:String = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as? String {
+                    return appVersion
+            }
+        
+            return "1.0"
+        }
     }
     
     static func showError(view:UIViewController, error: NSError?, callback: ((action: UIAlertAction)-> ())? = nil) {
@@ -35,27 +48,66 @@ class Helpers {
         showDialog(view, message: errorMessage!, title: errorTitle!, callback: callback)
     }
     
-    static func fetch (model:String, sortBy:String? = nil, sortAsc:Bool = false, format:String? = nil, args:String? = nil, callback:(context:NSManagedObjectContext, result:[NSManagedObject]?, error: NSError?)->()) {
-        let appDelegate: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
-        let context: NSManagedObjectContext = appDelegate.managedObjectContext
-        let fetchRequest = NSFetchRequest(entityName: model)
-        if format != nil && args != nil {
-            fetchRequest.predicate = NSPredicate(format: format!, args!)
-        }
-        
-        if sortBy != nil {
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: sortBy, ascending: sortAsc)]
-        }
-        
+    static func saveManagedContext (view: UIViewController? = nil, context: NSManagedObjectContext, callback: (error: NSError?)->()) {
         do {
-            let result:[NSManagedObject] = try context.executeFetchRequest(fetchRequest) as! [NSManagedObject]
-            if result.count != 0 {
-                callback(context: context, result: result, error: nil)
-            } else {
-                callback(context: context, result: nil, error: nil)
-            }
+            try context.save()
+            callback(error: nil)
         } catch let error as NSError {
-            callback(context: context, result: nil, error: error)
+            callback(error: error)
+            if view != nil {
+                self.showError(view!, error: error)
+            }
         }
     }
+    
+    static func async(run:()->(), completed:(()->())? = nil) {
+        let backgroundQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
+        dispatch_async(backgroundQueue, {
+            run()
+            if completed != nil {
+                dispatch_sync(dispatch_get_main_queue(), {() -> Void in
+                    completed!()
+                })
+            }
+        })
+    }
+    
+    internal static func getDataFromUrl(url:NSURL, completion: (data: NSData?, response: NSURLResponse?, error: NSError? ) -> ()) {
+        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
+            completion(data: data, response: response, error: error)
+            }.resume()
+    }
+    
+    // Helper function to get image from internet
+    static func setImage (imageView:UIImageView? = nil, url: String, callback: ((error:NSError?, image: UIImage?)-> Void)? = nil) {
+        
+        let nsURL = NSURL(string: url)
+        self.getDataFromUrl(nsURL!) {
+            data, response, error in
+            dispatch_async(dispatch_get_main_queue()) {
+                let noImage = UIImage(named: "no-image")
+                guard let data = data where error == nil else {
+                    if imageView != nil {
+                        imageView!.image = noImage
+                    }
+                    
+                    if callback != nil {
+                        callback!(error: error, image: noImage)
+                    }
+                    
+                    return
+                }
+                
+                let image = UIImage(data: data) ?? noImage
+                if imageView != nil {
+                    imageView!.image = image
+                }
+                
+                if callback != nil {
+                    callback!(error: nil, image: image)
+                }
+            }
+        }
+    }
+
 }

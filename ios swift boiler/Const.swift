@@ -46,5 +46,18 @@ class Const {
     }
     
     // TWITTER APP SECRET
-    static let TWITTER_SECRET = "N6t26j5RiKp1wyk55HJsK9U3nR9i08SKqNuSq4e6iqYByTFDdR"
+    static let TWITTER_KEY:String = "UNCDambMvAgmJ4u8cB8GmuxKA"
+    static let TWITTER_SECRET:String = "sBaC5cUwbO8fVtjuXbFquldXXZ0NGmTn6KJxNNjXiLHxYbcnJH"
+    
+    // MODEL NAMES
+    static let MODEL_USERS:String = "Users"
+    
+    // SEGUE TITLES
+    static let SEGUE_USER_VIEW:String = "UserView"
+    static let SEGUE_LOGIN_VIEW:String = "LoginView"
+    static let SEGUE_SETTINGS_VIEW:String = "SettingsView"
+    static let SEGUE_WEB_VIEW:String = "WebView"
+    
+    // NOTIFICATIONS
+    static let NOTIFICATION_USER_AUTH:String = "com.gottsohn.ios-swift-boiler.NC_USER_AUTH"
 }

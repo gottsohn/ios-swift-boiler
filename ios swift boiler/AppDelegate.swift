@@ -8,15 +8,54 @@
 
 import UIKit
 import CoreData
+import OAuthSwift
+import FBSDKLoginKit
+import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        if url.host == "oauth-callback" {
+            OAuthSwift.handleOpenURL(url)
+        }
+        
+        let isFacebookURL = url.scheme.hasPrefix("fb\(FBSDKSettings.appID())") && url.host == "authorize"
+        if isFacebookURL {
+            return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+        }
+        return true
+    }
+    
+    func getUser() {
+        Users.fetch(Const.MODEL_USERS) { context, result, error in
+            if error == nil && result != nil {
+                let user = result![0]
+                var userJSON:JSON = JSON([:])
+                userJSON[Const.KEY_PLATFORM].intValue = user.valueForKey(Const.KEY_PLATFORM) as! Int
+                userJSON[Const.KEY_USER_ID].stringValue = user.valueForKey(Const.KEY_USER_ID) as! String
+                userJSON[Const.KEY_USERNAME].stringValue = user.valueForKey(Const.KEY_USERNAME) as! String
+                userJSON[Const.KEY_IMG].stringValue = user.valueForKey(Const.KEY_IMG) as! String
+                userJSON[Const.KEY_BG_IMG].stringValue = user.valueForKey(Const.KEY_BG_IMG) as! String
+                userJSON[Const.KEY_OAUTH_TOKEN].stringValue = user.valueForKey(Const.KEY_OAUTH_TOKEN) as! String
+                userJSON[Const.KEY_OAUTH_TOKEN_SECRET].stringValue = user.valueForKey(Const.KEY_OAUTH_TOKEN_SECRET) as! String
+                userJSON[Const.KEY_EMAIL].stringValue = user.valueForKey(Const.KEY_EMAIL) as! String
+                userJSON[Const.KEY_DESCRIPTION].stringValue = user.valueForKey(Const.KEY_DESCRIPTION) as! String
+                userJSON[Const.KEY_NAME].stringValue = user.valueForKey(Const.KEY_NAME) as! String
+                Helpers.currentUser = userJSON
+                
+                NSNotificationCenter.defaultCenter().postNotificationName(Const.NOTIFICATION_USER_AUTH, object: nil)
+            }
+            
+            print(result)
+        }
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        getUser()
         return true
     }
 

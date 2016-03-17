@@ -60,13 +60,10 @@ class WebViewControllerTests: XCTestCase {
     func checkProgress() {
         XCTAssertNotNil(webViewController.progressView)
         XCTAssert(webViewController.progressView.hidden, "Progress View should be hidden")
-        XCTAssertGreaterThan(webViewController.progressView.progress, 0.9)
+        XCTAssertEqual(webViewController.progressView.progress, 1.0)
         timer.invalidate()
         asyncExpectation.fulfill()
     }
-    
-    
-
     
     func testPerformanceExample() {
         // This is an example of a performance test case.

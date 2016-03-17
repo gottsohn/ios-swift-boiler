@@ -1,3 +1,2 @@
 swift
   config_file: .swiftlint.yml
-  enabled: true

@@ -40,9 +40,10 @@ class SettingsTableViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let viewController:WebViewController = segue.destinationViewController as? WebViewController {
-            viewController.url = url
-            viewController.labelText = labelText
+        if segue.identifier == Const.SEGUE_WEB_VIEW,
+            let viewController:WebViewController = segue.destinationViewController as? WebViewController {
+                viewController.url = url
+                viewController.labelText = labelText
         }
     }
     
@@ -91,7 +92,7 @@ class SettingsTableViewController: UITableViewController {
             case 1:
                 url = "http://blog.godson.com.ng/terms-and-conditions/"
                 labelText =  NSLocalizedString("TNC", comment: "TNC")
-                performSegueWithIdentifier(Const.SEGUE_WEB_VIEW, sender: self)
+                // performSegueWithIdentifier(Const.SEGUE_WEB_VIEW, sender: self)
             case 2:
                 Helpers.showDialog(self, message: "About this app goes in here", title: "IOS Swift Boiler")
             default:

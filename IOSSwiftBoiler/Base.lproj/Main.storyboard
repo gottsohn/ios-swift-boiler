@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
     </dependencies>
     <scenes>
         <!--User View-->
@@ -190,6 +191,12 @@
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" image="settings"/>
+                                <connections>
+                                    <segue destination="tgf-kb-FgR" kind="show" identifier="SettingsView" id="Ahe-of-YPx">
+                                        <segue key="commit" inheritsFrom="parent" id="Sgu-kb-Zm0"/>
+                                        <segue key="preview" inheritsFrom="commit" id="i18-TZ-Qao"/>
+                                    </segue>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -227,7 +234,6 @@
                         <outlet property="profileImageView" destination="mEg-cx-WgR" id="V5H-Yn-BjR"/>
                         <outlet property="userBackgroundView" destination="5lw-sc-rhZ" id="YJV-it-Tql"/>
                         <outlet property="usernameLabel" destination="mUK-g0-eZA" id="yIJ-xY-NCS"/>
-                        <segue destination="tgf-kb-FgR" kind="show" identifier="SettingsView" id="4DS-L2-AAL"/>
                         <segue destination="4k5-9N-fQq" kind="show" identifier="LoginView" id="sKW-WH-S33"/>
                     </connections>
                 </viewController>
@@ -620,6 +626,12 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="H3y-yF-eoO" kind="show" identifier="WebView" id="rN6-wW-cgS">
+                                                <segue key="commit" inheritsFrom="parent" id="QUj-B9-cMC"/>
+                                                <segue key="preview" inheritsFrom="commit" id="3tD-8d-IKs"/>
+                                            </segue>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="KfQ-88-5tJ" detailTextLabel="tmc-ZG-eBr" style="IBUITableViewCellStyleSubtitle" id="9Al-VI-fKS">
                                         <rect key="frame" x="0.0" y="312.5" width="600" height="54"/>
@@ -660,9 +672,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="H3y-yF-eoO" kind="show" identifier="WebView" id="PDm-K8-HYV"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fj4-Y2-De2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -746,5 +755,9 @@
         <image name="twitter_filled" width="25" height="25"/>
         <image name="user-large" width="160" height="160"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="rN6-wW-cgS"/>
+        <segue reference="Ahe-of-YPx"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.41176470588235292" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
 </document>

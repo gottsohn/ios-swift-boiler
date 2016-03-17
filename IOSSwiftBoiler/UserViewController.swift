@@ -73,8 +73,4 @@ class UserViewController: UIViewController {
             inactiveUserView.hidden = false
         }
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-       
-    }
 }

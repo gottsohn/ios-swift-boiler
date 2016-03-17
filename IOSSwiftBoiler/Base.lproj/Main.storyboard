@@ -257,11 +257,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anmelden zu sehen guten Zeug" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jY-KN-yyH">
-                                <rect key="frame" x="191" y="457" width="217.5" height="21"/>
+                                <rect key="frame" x="190.5" y="457" width="218.5" height="21"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <size key="shadowOffset" width="1" height="-1"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="57" y="377" width="288" height="21"/>
                                 </variation>
@@ -273,7 +274,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schmetterling ist schön" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pem-vk-42n">
-                                <rect key="frame" x="192" y="200" width="217" height="27.5"/>
+                                <rect key="frame" x="191.5" y="200" width="218" height="27.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="m3A-rK-WZk"/>
                                 </constraints>
@@ -281,6 +282,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="-1"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="m3A-rK-WZk"/>
@@ -309,7 +311,7 @@
                                 </variation>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swift Über Alles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FU9-lL-09k">
-                                <rect key="frame" x="237" y="178" width="126.5" height="22.5"/>
+                                <rect key="frame" x="236.5" y="178" width="127.5" height="22.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="EHj-fZ-rmX"/>
                                 </constraints>
@@ -317,6 +319,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="-1"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="EHj-fZ-rmX"/>
@@ -333,14 +336,15 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anmelden" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZM-uP-oOP">
-                                <rect key="frame" x="233" y="417" width="134" height="39.5"/>
+                                <rect key="frame" x="232.5" y="417" width="135" height="39.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="pLP-No-3eg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="28"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <size key="shadowOffset" width="1" height="-1"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="pLP-No-3eg"/>

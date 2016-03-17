@@ -1,7 +1,7 @@
-disabled_rules: # rule identifiers to exclude from running
-  - colon
-  - comma
-  - control_statement
+# disabled_rules: # rule identifiers to exclude from running
+#   - colon
+#   - comma
+#   - control_statement
 opt_in_rules: # some rules are only opt-in
   - empty_count
   - missing_docs
@@ -10,10 +10,10 @@ opt_in_rules: # some rules are only opt-in
 included: # paths to include during linting. `--path` is ignored if present.
   - Source
 excluded: # paths to ignore during linting. Takes precedence over `included`.
-  - Carthage
+  # - Carthage
   - Pods
-  - Source/ExcludedFolder
-  - Source/ExcludedFile.swift
+  # - Source/ExcludedFolder
+  # - Source/ExcludedFile.swift
 
 # configurable rules can be customized from this configuration file
 # binary rules can set their severity level
@@ -46,4 +46,4 @@ variable_name:
     - id
     - URL
     - GlobalAPIKey
-reporter: "csv" # reporter type (xcode, json, csv, checkstyle)
+# reporter: "xcode" # reporter type (xcode, json, csv, checkstyle)

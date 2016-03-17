@@ -38,7 +38,7 @@ class UserViewController: UIViewController {
     }
     
     @IBAction func showLogin(sender: UIButton) {
-        performSegueWithIdentifier(Const.SEGUE_LOGIN_VIEW, sender: sender)
+    
     }
     
     func populate() {
@@ -58,8 +58,6 @@ class UserViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == Const.SEGUE_LOGIN_VIEW {
-            segue.destinationViewController.modalPresentationStyle = .OverCurrentContext
-        }
+       
     }
 }

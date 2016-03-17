@@ -33,6 +33,10 @@
                                         </state>
                                         <connections>
                                             <action selector="showLogin:" destination="Wil-PY-vKz" eventType="touchUpInside" id="si7-ud-z5M"/>
+                                            <segue destination="4k5-9N-fQq" kind="presentation" identifier="LoginView" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="WcZ-KJ-gsh">
+                                                <segue key="commit" inheritsFrom="parent" id="mQe-Or-LbI"/>
+                                                <segue key="preview" inheritsFrom="commit" id="d48-Kk-CW6"/>
+                                            </segue>
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Login to view and manage your profile." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="i70-dk-yuS">
@@ -234,7 +238,6 @@
                         <outlet property="profileImageView" destination="mEg-cx-WgR" id="V5H-Yn-BjR"/>
                         <outlet property="userBackgroundView" destination="5lw-sc-rhZ" id="YJV-it-Tql"/>
                         <outlet property="usernameLabel" destination="mUK-g0-eZA" id="yIJ-xY-NCS"/>
-                        <segue destination="4k5-9N-fQq" kind="show" identifier="LoginView" id="sKW-WH-S33"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dJB-rf-jHY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -758,6 +761,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="rN6-wW-cgS"/>
         <segue reference="Ahe-of-YPx"/>
+        <segue reference="WcZ-KJ-gsh"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.41176470588235292" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
 </document>

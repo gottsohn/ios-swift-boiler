@@ -5,15 +5,15 @@ pod 'Alamofire', '~> 3.0'
 pod 'OAuthSwift', '~> 0.5.0'
 pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 
-target 'ios swift boiler' do
+target 'IOSSwiftBoiler' do
 
 end
 
-target 'ios swift boilerTests' do
+target 'IOSSwiftBoilerTests' do
 
 end
 
-target 'ios swift boilerUITests' do
+target 'IOSSwiftBoilerUITests' do
 
 end
 

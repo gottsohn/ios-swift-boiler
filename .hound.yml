@@ -1,2 +1,2 @@
-swift
+swift:
   config_file: .swiftlint.yml

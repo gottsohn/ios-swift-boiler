@@ -14,8 +14,9 @@ class SettingsTableViewController: UITableViewController {
     
     let SONG_COUNT:Int = 30
     var songs:[NSManagedObject]!
-    var url:String!
-    var labelText:String!
+    var url:String = "http://blog.godson.com.ng/terms-and-conditions/"
+    var labelText:String =  NSLocalizedString("TNC", comment: "TNC")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
@@ -45,7 +46,7 @@ class SettingsTableViewController: UITableViewController {
                 viewController.labelText = labelText
         }
     }
-    
+        
     @IBAction func close (sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -88,9 +89,8 @@ class SettingsTableViewController: UITableViewController {
         case 1:
             switch indexPath.row {
             case 1:
-                url = "http://blog.godson.com.ng/terms-and-conditions/"
-                labelText =  NSLocalizedString("TNC", comment: "TNC")
-                // performSegueWithIdentifier(Const.SEGUE_WEB_VIEW, sender: self)
+                // Open Web View
+                break
             case 2:
                 Helpers.showDialog(self, message: "About this app goes in here", title: "IOS Swift Boiler")
             default:

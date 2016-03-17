@@ -26,9 +26,11 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Play background Video
         playBgVideo()
         
-        // Add Swipe to close to View
+        // Add Pull up / down Swipe to close to View
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "panRecognized:")
         panGestureRecognizer.delegate = self
         view.addGestureRecognizer(panGestureRecognizer)
@@ -236,18 +238,20 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
         avPlayerLayer.frame = view.bounds
         avPlayerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         view.layer.addSublayer(avPlayerLayer)
+        
+        // Add observer to help repeat background video when it completes
         notificationCenter.addObserver(self,
             selector: "playerItemDidReachEnd:",
             name: AVPlayerItemDidPlayToEndTimeNotification,
             object: player?.currentItem)
         
-        player.volume = 0
+        player.volume = 1.0
         player.play()
     }
     
     func playerItemDidReachEnd(notification: NSNotification) {
         player.seekToTime(kCMTimeZero)
-        player.volume = 0.002
+        player.volume = 0.5
         player.play()
     }
 }

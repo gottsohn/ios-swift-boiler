@@ -54,6 +54,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         getUser()
+        
+        if #available(iOS 9.0, *) {
+            // let existingShortcutItems = UIApplication.sharedApplication().shortcutItems ?? []
+            let login = UIApplicationShortcutItem(type: NSLocalizedString("OPEN", comment: "Open"), localizedTitle:NSLocalizedString("LOGIN", comment: "Login"), localizedSubtitle: "", icon: UIApplicationShortcutIcon(templateImageName: "lock"), userInfo: [Const.ACTION_LOGIN: true])
+            
+            let home = UIApplicationShortcutItem(type: NSLocalizedString("OPEN", comment: "Open"), localizedTitle: NSLocalizedString("HOME", comment: "Home"), localizedSubtitle: "", icon: UIApplicationShortcutIcon(templateImageName: "home"), userInfo: [Const.ACTION_HOME: true])
+            
+            let settings = UIApplicationShortcutItem(type: NSLocalizedString("OPEN", comment: "Open"), localizedTitle: NSLocalizedString("SETTINGS", comment: "Settings"), localizedSubtitle: "", icon: UIApplicationShortcutIcon(templateImageName: "settings-black"), userInfo: [Const.ACTION_SETTINGS: true])
+            
+            UIApplication.sharedApplication().shortcutItems = [home, settings]
+            if !(Helpers.currentUser != nil) {
+                UIApplication.sharedApplication().shortcutItems?.append(login)
+            }
+        }
+
         return true
     }
 

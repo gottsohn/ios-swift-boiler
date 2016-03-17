@@ -15,3 +15,7 @@ CONFIRM = "Confirm";
 ARE_YOU_SURE = "Are you sure?";
 USERNAME = "<user>";
 TNC = "Terms and Conditions";
+HOME = "Home";
+LOGIN = "Login";
+OPEN = "Open";
+SETTINGS = "Settings";

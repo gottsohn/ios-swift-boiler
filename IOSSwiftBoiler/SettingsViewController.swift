@@ -40,8 +40,7 @@ class SettingsTableViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == Const.SEGUE_WEB_VIEW,
-            let viewController:WebViewController = segue.destinationViewController as? WebViewController {
+        if let viewController:WebViewController = segue.destinationViewController as? WebViewController {
                 viewController.url = url
                 viewController.labelText = labelText
         }
@@ -81,7 +80,6 @@ class SettingsTableViewController: UITableViewController {
                         self.close(tableView)
                     })
                 } else {
-                    print("Close")
                     close(tableView)
                 }
             default:
@@ -146,16 +144,5 @@ class SettingsTableViewController: UITableViewController {
     // Return false if you do not want the item to be re-orderable.
     return true
     }
-    */
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
-    
+    */    
 }

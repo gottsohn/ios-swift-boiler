@@ -63,4 +63,5 @@ class Const {
     
     // Storyboard Identifies
     static let ID_USER_VIEW_CONTROLLER:String = "UserViewController"
+    static let ID_WEB_VIEW_CONTROLLER:String = "WebViewController"
 }

@@ -11,7 +11,6 @@
 		008681B91C9A355B0036D514 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 008681B71C9A355B0036D514 /* Main.storyboard */; };
 		008681BC1C9A355B0036D514 /* IOSSwiftBoiler.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 008681BA1C9A355B0036D514 /* IOSSwiftBoiler.xcdatamodeld */; };
 		008681BE1C9A355B0036D514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 008681BD1C9A355B0036D514 /* Assets.xcassets */; };
-		008681C11C9A355B0036D514 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 008681BF1C9A355B0036D514 /* LaunchScreen.storyboard */; };
 		008681CC1C9A355B0036D514 /* IOSSwiftBoilerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008681CB1C9A355B0036D514 /* IOSSwiftBoilerTests.swift */; };
 		008681D71C9A355B0036D514 /* IOSSwiftBoilerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008681D61C9A355B0036D514 /* IOSSwiftBoilerUITests.swift */; };
 		008681F01C9A36820036D514 /* BackgroundGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008681E41C9A36820036D514 /* BackgroundGradientView.swift */; };
@@ -28,6 +27,9 @@
 		008682011C9A395B0036D514 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 008682001C9A395B0036D514 /* Assets */; };
 		008682041C9A39830036D514 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008682021C9A39830036D514 /* FBSDKCoreKit.framework */; };
 		008682051C9A39830036D514 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008682031C9A39830036D514 /* FBSDKLoginKit.framework */; };
+		0086820C1C9A3E680036D514 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 008682101C9A3E680036D514 /* Localizable.strings */; };
+		0086820D1C9A3E680036D514 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 008682101C9A3E680036D514 /* Localizable.strings */; };
+		0086820E1C9A3E680036D514 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 008682101C9A3E680036D514 /* Localizable.strings */; };
 		3547E56E49185700EFF4E4A8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A7021E0947DBDD24B87661 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +56,6 @@
 		008681B81C9A355B0036D514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		008681BB1C9A355B0036D514 /* IOSSwiftBoiler.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IOSSwiftBoiler.xcdatamodel; sourceTree = "<group>"; };
 		008681BD1C9A355B0036D514 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		008681C01C9A355B0036D514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		008681C21C9A355B0036D514 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		008681C71C9A355B0036D514 /* IOSSwiftBoilerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSSwiftBoilerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		008681CB1C9A355B0036D514 /* IOSSwiftBoilerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSSwiftBoilerTests.swift; sourceTree = "<group>"; };
@@ -76,6 +77,10 @@
 		008682001C9A395B0036D514 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
 		008682021C9A39830036D514 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		008682031C9A39830036D514 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		008682061C9A3E300036D514 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		0086820F1C9A3E680036D514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		008682111C9A3E6B0036D514 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		008682131C9A3EA90036D514 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		52C0E6DEB680749508C595BA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9E887D64F25997DBB2D7EB3A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B8A7021E0947DBDD24B87661 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +117,7 @@
 		008681A71C9A355B0036D514 = {
 			isa = PBXGroup;
 			children = (
+				008682101C9A3E680036D514 /* Localizable.strings */,
 				008682021C9A39830036D514 /* FBSDKCoreKit.framework */,
 				008682031C9A39830036D514 /* FBSDKLoginKit.framework */,
 				008681B21C9A355B0036D514 /* IOSSwiftBoiler */,
@@ -145,7 +151,6 @@
 				008681E61C9A36820036D514 /* Helpers.swift */,
 				008681FC1C9A36B10036D514 /* Controllers */,
 				008681FE1C9A36DA0036D514 /* Models */,
-				008681BF1C9A355B0036D514 /* LaunchScreen.storyboard */,
 				008681C21C9A355B0036D514 /* Info.plist */,
 				008681BA1C9A355B0036D514 /* IOSSwiftBoiler.xcdatamodeld */,
 			);
@@ -317,6 +322,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 008681A71C9A355B0036D514;
 			productRefGroup = 008681B11C9A355B0036D514 /* Products */;
@@ -336,8 +342,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				008682011C9A395B0036D514 /* Assets in Resources */,
+				0086820C1C9A3E680036D514 /* Localizable.strings in Resources */,
 				008681F71C9A36820036D514 /* TextHeadingView.xib in Resources */,
-				008681C11C9A355B0036D514 /* LaunchScreen.storyboard in Resources */,
 				008681BE1C9A355B0036D514 /* Assets.xcassets in Resources */,
 				008681B91C9A355B0036D514 /* Main.storyboard in Resources */,
 			);
@@ -347,6 +353,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0086820D1C9A3E680036D514 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +361,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0086820E1C9A3E680036D514 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,16 +471,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				008681B81C9A355B0036D514 /* Base */,
+				008682061C9A3E300036D514 /* de */,
+				008682131C9A3EA90036D514 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		008681BF1C9A355B0036D514 /* LaunchScreen.storyboard */ = {
+		008682101C9A3E680036D514 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				008681C01C9A355B0036D514 /* Base */,
+				0086820F1C9A3E680036D514 /* Base */,
+				008682111C9A3E6B0036D514 /* de */,
 			);
-			name = LaunchScreen.storyboard;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

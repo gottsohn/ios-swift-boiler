@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  IOSSwiftBoiler
+
+  Created by Godson Ukpere on 3/17/16.
+  Copyright © 2016 Godson Ukpere. All rights reserved.
+*/
+CLOSE = "Close";
+ERROR = "Error";
+ERROR_MESSAGE = "Error completing request";
+DONE = "Done";
+CANCEL = "Cancel";
+LOGOUT = "Logout";
+CONFIRM = "Confirm";
+ARE_YOU_SURE = "Are you sure?";
+USERNAME = "<user>";
+TNC = "Terms and Conditions";

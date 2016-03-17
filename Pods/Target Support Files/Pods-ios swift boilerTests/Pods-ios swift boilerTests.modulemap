@@ -1,6 +1,0 @@
-framework module Pods_ios_swift_boilerTests {
-  umbrella header "Pods-ios swift boilerTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

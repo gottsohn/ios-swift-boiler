@@ -14,17 +14,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-ios swift boiler.xcscheme</key>
+		<key>Pods-IOSSwiftBoiler.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-ios swift boilerTests.xcscheme</key>
+		<key>Pods-IOSSwiftBoilerTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-ios swift boilerUITests.xcscheme</key>
+		<key>Pods-IOSSwiftBoilerUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,12 +47,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>134A17F5CF8DABA479155D928016E57A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>15980FB7DED5C1E662114572DA315ED2</key>
+		<key>1AECC3D56823D01ACD8481CF014302CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,12 +57,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>73C8C4552E50F7D4D22986038980B27D</key>
+		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<key>8504324AC3CBC2F8D01C6109E5A54185</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C336A9159411B82E4E7693734409E064</key>
 		<dict>
 			<key>primary</key>
 			<true/>

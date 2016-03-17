@@ -12,6 +12,8 @@ import SwiftyJSON
 
 class Helpers {
     static var currentUser: JSON!
+    static var launchActions:[String : NSSecureCoding]!
+    
     static func showDialog(viewController:UIViewController, message:String, title:String, callbackOk:((action:UIAlertAction) -> Void)? = nil, callback:((action:UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         let action = UIAlertAction(title: NSLocalizedString("CLOSE", comment: "Close"), style: .Default, handler: callback)

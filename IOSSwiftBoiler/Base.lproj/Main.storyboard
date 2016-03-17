@@ -29,7 +29,7 @@
                                         <rect key="frame" x="10" y="340" width="570" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Go To Login">
-                                            <color key="titleColor" red="1" green="0.53333333329999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="1" green="0.41176470590000003" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="showLogin:" destination="Wil-PY-vKz" eventType="touchUpInside" id="si7-ud-z5M"/>
@@ -414,15 +414,13 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxC-rP-McH" userLabel="IchSpäter">
                                         <rect key="frame" x="10" y="62" width="260" height="50"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="0.41176470590000003" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="G4r-vt-TPP"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
                                         <size key="titleShadowOffset" width="1" height="0.0"/>
-                                        <state key="normal" title="Later">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
+                                        <state key="normal" title="Later"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="16" y="62" width="254" height="53"/>
                                         </variation>
@@ -663,6 +661,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="tintColor" red="1" green="0.41176470590000003" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -767,5 +766,5 @@
         <segue reference="Ahe-of-YPx"/>
         <segue reference="WcZ-KJ-gsh"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="1" green="0.41176470588235292" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="1" green="0.41176470590000003" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>

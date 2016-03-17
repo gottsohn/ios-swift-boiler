@@ -29,6 +29,23 @@ class UserViewController: UIViewController {
         populate()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        processLaunch()
+    }
+    
+    func processLaunch() {
+        if Helpers.launchActions != nil {
+            if Helpers.launchActions[Const.ACTION_LOGIN] != nil {
+                performSegueWithIdentifier(Const.SEGUE_LOGIN_VIEW, sender: self)
+                Helpers.launchActions = nil
+            } else if Helpers.launchActions[Const.ACTION_SETTINGS] != nil {
+                performSegueWithIdentifier(Const.SEGUE_SETTINGS_VIEW, sender: self)
+                Helpers.launchActions = nil
+            }
+        }
+    }
+    
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
@@ -55,9 +72,5 @@ class UserViewController: UIViewController {
             activeUserView.hidden = true
             inactiveUserView.hidden = false
         }
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-       
     }
 }

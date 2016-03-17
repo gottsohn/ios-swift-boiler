@@ -64,4 +64,9 @@ class Const {
     // Storyboard Identifies
     static let ID_USER_VIEW_CONTROLLER:String = "UserViewController"
     static let ID_WEB_VIEW_CONTROLLER:String = "WebViewController"
+    
+    // LAUNCH ACTION
+    static let ACTION_LOGIN:String = "LOGIN"
+    static let ACTION_HOME:String = "HOME"
+    static let ACTION_SETTINGS:String = "SETTINGS"
 }

@@ -31,6 +31,7 @@
 		0086820D1C9A3E680036D514 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 008682101C9A3E680036D514 /* Localizable.strings */; };
 		0086820E1C9A3E680036D514 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 008682101C9A3E680036D514 /* Localizable.strings */; };
 		00C2D2221C9AE376009265D7 /* WebViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2D2211C9AE376009265D7 /* WebViewControllerTests.swift */; };
+		00F777DE1C9B5195002A6F43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00F777DD1C9B5195002A6F43 /* LaunchScreen.storyboard */; };
 		3547E56E49185700EFF4E4A8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A7021E0947DBDD24B87661 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		008682111C9A3E6B0036D514 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		008682131C9A3EA90036D514 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		00C2D2211C9AE376009265D7 /* WebViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewControllerTests.swift; sourceTree = "<group>"; };
+		00F777DD1C9B5195002A6F43 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52C0E6DEB680749508C595BA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9E887D64F25997DBB2D7EB3A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B8A7021E0947DBDD24B87661 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +148,7 @@
 			children = (
 				008682001C9A395B0036D514 /* Assets */,
 				008681B31C9A355B0036D514 /* AppDelegate.swift */,
+				00F777DD1C9B5195002A6F43 /* LaunchScreen.storyboard */,
 				008681B71C9A355B0036D514 /* Main.storyboard */,
 				008681BD1C9A355B0036D514 /* Assets.xcassets */,
 				008681FF1C9A39150036D514 /* Custom Views */,
@@ -347,6 +350,7 @@
 				008682011C9A395B0036D514 /* Assets in Resources */,
 				0086820C1C9A3E680036D514 /* Localizable.strings in Resources */,
 				008681F71C9A36820036D514 /* TextHeadingView.xib in Resources */,
+				00F777DE1C9B5195002A6F43 /* LaunchScreen.storyboard in Resources */,
 				008681BE1C9A355B0036D514 /* Assets.xcassets in Resources */,
 				008681B91C9A355B0036D514 /* Main.storyboard in Resources */,
 			);
@@ -529,7 +533,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -568,7 +572,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

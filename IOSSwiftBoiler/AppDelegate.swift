@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if isFacebookURL {
             return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
         }
+        
         return true
     }
     
@@ -45,7 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 userJSON[Const.KEY_DESCRIPTION].stringValue = user.valueForKey(Const.KEY_DESCRIPTION) as! String
                 userJSON[Const.KEY_NAME].stringValue = user.valueForKey(Const.KEY_NAME) as! String
                 Helpers.currentUser = userJSON
-                
                 NSNotificationCenter.defaultCenter().postNotificationName(Const.NOTIFICATION_USER_AUTH, object: nil)
             }
         }
@@ -53,10 +53,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        window?.tintColor = UIColor.init(red: 1.0, green: 0.46, blue: 0.7, alpha: 1.0)
         getUser()
+        if #available(iOS 9.0, *) {
+            let login = UIApplicationShortcutItem(type: NSLocalizedString("OPEN", comment: "Open"), localizedTitle:NSLocalizedString("LOGIN", comment: "Login"), localizedSubtitle: "", icon: UIApplicationShortcutIcon(templateImageName: "lock"), userInfo: [Const.ACTION_LOGIN: true])
+            
+            let home = UIApplicationShortcutItem(type: NSLocalizedString("OPEN", comment: "Open"), localizedTitle: NSLocalizedString("HOME", comment: "Home"), localizedSubtitle: "", icon: UIApplicationShortcutIcon(templateImageName: "home"), userInfo: [Const.ACTION_HOME: true])
+            
+            let settings = UIApplicationShortcutItem(type: NSLocalizedString("OPEN", comment: "Open"), localizedTitle: NSLocalizedString("SETTINGS", comment: "Settings"), localizedSubtitle: "", icon: UIApplicationShortcutIcon(templateImageName: "settings-black"), userInfo: [Const.ACTION_SETTINGS: true])
+            
+            UIApplication.sharedApplication().shortcutItems = [home, settings]
+            if !(Helpers.currentUser != nil) {
+                UIApplication.sharedApplication().shortcutItems?.append(login)
+            }
+        }
+        
         return true
     }
 
+    @available(iOS 9.0, *)
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        Helpers.launchActions = shortcutItem.userInfo
+        completionHandler(true)
+    }
+    
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

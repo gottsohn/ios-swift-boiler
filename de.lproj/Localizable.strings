@@ -15,3 +15,7 @@ CONFIRM = "Zulassen";
 ARE_YOU_SURE = "Bist du sicher?";
 USERNAME = "<benutzer>";
 TNC = "Geschäftsbedingungen";
+HOME = "Startseite";
+LOGIN = "Anmelden";
+OPEN = "Öffnen";
+SETTINGS = "Einstellungen";

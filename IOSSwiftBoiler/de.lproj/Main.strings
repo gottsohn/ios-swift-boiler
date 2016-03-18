@@ -48,7 +48,7 @@
 "Zhu-o7-AfR.normalTitle" = "Gehen Sie zu Anmelden";
 
 /* Class = "UITextView"; text = "Login to view and manage your profile."; ObjectID = "i70-dk-yuS"; */
-"i70-dk-yuS.text" = "Login to view and manage your profile.";
+"i70-dk-yuS.text" = "Anmelden Ihr Profil anzuzeigen und zu verwalten.";
 
 /* Class = "UIButton"; normalTitle = "  Twitter"; ObjectID = "jhJ-xA-HOq"; */
 "jhJ-xA-HOq.normalTitle" = "  Twitter";

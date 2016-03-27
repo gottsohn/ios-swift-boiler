@@ -100,7 +100,7 @@ class Users: NSManagedObject {
                     }
                     
                     context.deleteObject(managedObject)
-                    count++
+                    count += 1
                 }
                 
                 Helpers.saveManagedContext(context: context) {

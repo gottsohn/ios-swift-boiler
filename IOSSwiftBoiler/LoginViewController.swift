@@ -31,7 +31,7 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
         playBgVideo()
         
         // Add Pull up / down Swipe to close to View
-        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "panRecognized:")
+        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panRecognized(_:)))
         panGestureRecognizer.delegate = self
         view.addGestureRecognizer(panGestureRecognizer)
     }
@@ -241,7 +241,7 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
         
         // Add observer to help repeat background video when it completes
         notificationCenter.addObserver(self,
-            selector: "playerItemDidReachEnd:",
+            selector: #selector(playerItemDidReachEnd(_:)),
             name: AVPlayerItemDidPlayToEndTimeNotification,
             object: player?.currentItem)
         

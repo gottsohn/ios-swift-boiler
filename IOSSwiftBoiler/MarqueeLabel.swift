@@ -30,22 +30,22 @@ public class MarqueeLabel: UILabel {
     //
     
     /**
-    Defines the direction and method in which the `MarqueeLabel` instance scrolls.
-    `MarqueeLabel` supports four types of scrolling: `MLLeftRight`, `MLRightLeft`, `MLContinuous`, and `MLContinuousReverse`.
-    
-    Given the nature of how text direction works, the options for the `marqueeType` property require specific text alignments
-    and will set the textAlignment property accordingly.
-    
-    - `MLLeftRight` type is ONLY compatible with a label text alignment of `NSTextAlignmentLeft`.
-    - `MLRightLeft` type is ONLY compatible with a label text alignment of `NSTextAlignmentRight`.
-    - `MLContinuous` does not require a text alignment (it is effectively centered).
-    - `MLContinuousReverse` does not require a text alignment (it is effectively centered).
-    
-    Defaults to `MLContinuous`.
-    
-    - SeeAlso: Type
-    - SeeAlso: textAlignment
-    */
+     Defines the direction and method in which the `MarqueeLabel` instance scrolls.
+     `MarqueeLabel` supports four types of scrolling: `MLLeftRight`, `MLRightLeft`, `MLContinuous`, and `MLContinuousReverse`.
+     
+     Given the nature of how text direction works, the options for the `marqueeType` property require specific text alignments
+     and will set the textAlignment property accordingly.
+     
+     - `MLLeftRight` type is ONLY compatible with a label text alignment of `NSTextAlignmentLeft`.
+     - `MLRightLeft` type is ONLY compatible with a label text alignment of `NSTextAlignmentRight`.
+     - `MLContinuous` does not require a text alignment (it is effectively centered).
+     - `MLContinuousReverse` does not require a text alignment (it is effectively centered).
+     
+     Defaults to `MLContinuous`.
+     
+     - SeeAlso: Type
+     - SeeAlso: textAlignment
+     */
     public var type: Type = .Continuous {
         didSet {
             if type == oldValue {
@@ -132,7 +132,7 @@ public class MarqueeLabel: UILabel {
         didSet {
             if tapToScroll != oldValue {
                 if tapToScroll {
-                    let tapRecognizer = UITapGestureRecognizer(target: self, action: "labelWasTapped:")
+                    let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(MarqueeLabel.labelWasTapped(_:)))
                     self.addGestureRecognizer(tapRecognizer)
                     userInteractionEnabled = true
                 } else {
@@ -317,20 +317,20 @@ public class MarqueeLabel: UILabel {
     //
     
     /**
-    Convenience method to restart all `MarqueeLabel` instances that have the specified view controller in their next responder chain.
-    
-    - Parameter controller: The view controller for which to restart all `MarqueeLabel` instances.
-    
-    - Warning: View controllers that appear with animation (such as from underneath a modal-style controller) can cause some `MarqueeLabel` text
-    position "jumping" when this method is used in `viewDidAppear` if scroll animations are already underway. Use this method inside `viewWillAppear:`
-    instead to avoid this problem.
-    
-    - Warning: This method may not function properly if passed the parent view controller when using view controller containment.
-    
-    - SeeAlso: restartLabel
-    - SeeAlso: controllerViewDidAppear:
-    - SeeAlso: controllerViewWillAppear:
-    */
+     Convenience method to restart all `MarqueeLabel` instances that have the specified view controller in their next responder chain.
+     
+     - Parameter controller: The view controller for which to restart all `MarqueeLabel` instances.
+     
+     - Warning: View controllers that appear with animation (such as from underneath a modal-style controller) can cause some `MarqueeLabel` text
+     position "jumping" when this method is used in `viewDidAppear` if scroll animations are already underway. Use this method inside `viewWillAppear:`
+     instead to avoid this problem.
+     
+     - Warning: This method may not function properly if passed the parent view controller when using view controller containment.
+     
+     - SeeAlso: restartLabel
+     - SeeAlso: controllerViewDidAppear:
+     - SeeAlso: controllerViewWillAppear:
+     */
     class func restartLabelsOfController(controller: UIViewController) {
         MarqueeLabel.notifyController(controller, message: .Restart)
     }
@@ -391,14 +391,14 @@ public class MarqueeLabel: UILabel {
     //
     
     /**
-    Returns a newly initialized `MarqueeLabel` instance with the specified scroll rate and edge transparency fade length.
-    
-    - Parameter frame: A rectangle specifying the initial location and size of the view in its superview's coordinates. Text (for the given font, font size, etc.) that does not fit in this frame will automatically scroll.
-    - Parameter pixelsPerSec: A rate of scroll for the label scroll animation. Must be non-zero. Note that this will be the peak (mid-transition) rate for ease-type animation.
-    - Parameter fadeLength: A length of transparency fade at the left and right edges of the `MarqueeLabel` instance's frame.
-    - Returns: An initialized `MarqueeLabel` object or nil if the object couldn't be created.
-    - SeeAlso: fadeLength
-    */
+     Returns a newly initialized `MarqueeLabel` instance with the specified scroll rate and edge transparency fade length.
+     
+     - Parameter frame: A rectangle specifying the initial location and size of the view in its superview's coordinates. Text (for the given font, font size, etc.) that does not fit in this frame will automatically scroll.
+     - Parameter pixelsPerSec: A rate of scroll for the label scroll animation. Must be non-zero. Note that this will be the peak (mid-transition) rate for ease-type animation.
+     - Parameter fadeLength: A length of transparency fade at the left and right edges of the `MarqueeLabel` instance's frame.
+     - Returns: An initialized `MarqueeLabel` object or nil if the object couldn't be created.
+     - SeeAlso: fadeLength
+     */
     init(frame: CGRect, rate: CGFloat, fadeLength fade: CGFloat) {
         speed = .Rate(rate)
         fadeLength = CGFloat(min(fade, frame.size.width/2.0))
@@ -455,12 +455,12 @@ public class MarqueeLabel: UILabel {
         
         // Add notification observers
         // Custom class notifications
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "restartForViewController:", name: MarqueeKeys.Restart.rawValue, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "labelizeForController:", name: MarqueeKeys.Labelize.rawValue, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "animateForController:", name: MarqueeKeys.Animate.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(restartForViewController(_:)), name: MarqueeKeys.Restart.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(labelizeForController(_:)), name: MarqueeKeys.Labelize.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(animateForController(_:)), name: MarqueeKeys.Animate.rawValue, object: nil)
         // UIApplication state notifications
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "restartLabel", name: UIApplicationDidBecomeActiveNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "shutdownLabel", name: UIApplicationDidEnterBackgroundNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(restartLabel), name: UIApplicationDidBecomeActiveNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(shutdownLabel), name: UIApplicationDidEnterBackgroundNotification, object: nil)
     }
     
     override public func awakeFromNib() {
@@ -470,17 +470,17 @@ public class MarqueeLabel: UILabel {
     
     private func forwardPropertiesToSublabel() {
         /*
-        Note that this method is currently ONLY called from awakeFromNib, i.e. when
-        text properties are set via a Storyboard. As the Storyboard/IB doesn't currently
-        support attributed strings, there's no need to "forward" the super attributedString value.
-        */
+         Note that this method is currently ONLY called from awakeFromNib, i.e. when
+         text properties are set via a Storyboard. As the Storyboard/IB doesn't currently
+         support attributed strings, there's no need to "forward" the super attributedString value.
+         */
         
         // Since we're a UILabel, we actually do implement all of UILabel's properties.
         // We don't care about these values, we just want to forward them on to our sublabel.
         let properties = ["baselineAdjustment", "enabled", "highlighted", "highlightedTextColor",
-            "minimumFontSize", "shadowOffset", "textAlignment",
-            "userInteractionEnabled", "adjustsFontSizeToFitWidth",
-            "lineBreakMode", "numberOfLines"]
+                          "minimumFontSize", "shadowOffset", "textAlignment",
+                          "userInteractionEnabled", "adjustsFontSizeToFitWidth",
+                          "lineBreakMode", "numberOfLines"]
         
         // Iterate through properties
         sublabel.text = super.text
@@ -725,7 +725,8 @@ public class MarqueeLabel: UILabel {
     // Define animation completion closure type
     private typealias MLAnimationCompletion = (finished: Bool) -> ()
     
-    private func scroll(interval: CGFloat, delay: CGFloat = 0.0, var scroller: Scroller, fader: CAKeyframeAnimation?) {
+    private func scroll(interval: CGFloat, delay: CGFloat = 0.0, scroller_: Scroller, fader: CAKeyframeAnimation?) {
+        var scroller:Scroller = scroller_
         // Check for conditions which would prevent scrolling
         if !labelReadyForScroll() {
             return
@@ -780,7 +781,7 @@ public class MarqueeLabel: UILabel {
                 // Begin again, if conditions met
                 if (self.labelShouldScroll() && !self.tapToScroll && !self.holdScrolling) {
                     // Perform completion callback
-                    self.scroll(interval, delay: delay, scroller: scroller, fader: gradientAnimation)
+                    self.scroll(interval, delay: delay, scroller_: scroller, fader: gradientAnimation)
                 }
             }
         })
@@ -827,7 +828,7 @@ public class MarqueeLabel: UILabel {
         })
         
         // Scroll
-        scroll(interval, delay: delay, scroller: scroller, fader: nil)
+        scroll(interval, delay: delay, scroller_: scroller, fader: nil)
     }
     
     
@@ -852,7 +853,7 @@ public class MarqueeLabel: UILabel {
         })
         
         // Scroll
-        scroll(interval, delay: delay, scroller: scroller, fader: nil)
+        scroll(interval, delay: delay, scroller_: scroller, fader: nil)
     }
     
     private func applyGradientMask(fadeLength: CGFloat, animated: Bool) {
@@ -905,7 +906,7 @@ public class MarqueeLabel: UILabel {
         case .ContinuousReverse, .RightLeft:
             adjustedColors = [(trailingFadeNeeded ? transparent : opaque), opaque, opaque, opaque]
             
-            // .MLContinuous, .MLLeftRight
+        // .MLContinuous, .MLLeftRight
         default:
             adjustedColors = [opaque, opaque, opaque, (trailingFadeNeeded ? transparent : opaque)]
             break
@@ -964,7 +965,7 @@ public class MarqueeLabel: UILabel {
                     1.0                                                 // 9) End of LE fade out, just as scroll home finishes
             ]
             
-            // .MLContinuous, .MLContinuousReverse
+        // .MLContinuous, .MLContinuousReverse
         default:
             // Calculate total animation duration
             let totalDuration = delay + interval
@@ -1081,7 +1082,7 @@ public class MarqueeLabel: UILabel {
             ]
             
             // .Continuous
-            // .ContinuousReverse
+        // .ContinuousReverse
         default:
             //NSAssert(values.count == 3, @"Incorrect number of values passed for MLContinous-type animation")
             totalDuration = delay + interval
@@ -1212,19 +1213,19 @@ public class MarqueeLabel: UILabel {
     //
     
     /**
-    Overrides any non-size condition which is preventing the receiver from automatically scrolling, and begins a scroll animation.
-    
-    Currently the only non-size conditions which can prevent a label from scrolling are the `tapToScroll` and `holdScrolling` properties. This
-    method will not force a label with a string that fits inside the label bounds (i.e. that would not automatically scroll) to begin a scroll
-    animation.
-    
-    Upon the completion of the first forced scroll animation, the receiver will not automatically continue to scroll unless the conditions
-    preventing scrolling have been removed.
-    
-    - Note: This method has no effect if called during an already in-flight scroll animation.
-    
-    - SeeAlso: restartLabel
-    */
+     Overrides any non-size condition which is preventing the receiver from automatically scrolling, and begins a scroll animation.
+     
+     Currently the only non-size conditions which can prevent a label from scrolling are the `tapToScroll` and `holdScrolling` properties. This
+     method will not force a label with a string that fits inside the label bounds (i.e. that would not automatically scroll) to begin a scroll
+     animation.
+     
+     Upon the completion of the first forced scroll animation, the receiver will not automatically continue to scroll unless the conditions
+     preventing scrolling have been removed.
+     
+     - Note: This method has no effect if called during an already in-flight scroll animation.
+     
+     - SeeAlso: restartLabel
+     */
     public func triggerScrollStart() {
         if labelShouldScroll() && !awayFromHome {
             beginScroll()
@@ -1368,8 +1369,8 @@ public class MarqueeLabel: UILabel {
     
     #if os(iOS)
     override public func viewForBaselineLayout() -> UIView {
-    // Use subLabel view for handling baseline layouts
-    return sublabel
+        // Use subLabel view for handling baseline layouts
+        return sublabel
     }
     #endif
     
@@ -1651,7 +1652,7 @@ private extension CAMediaTimingFunction {
         var t1 = y_0
         var f0, df0: CGFloat
         
-        for (var i = 0; i < 15; i++) {
+        for _ in 0 ..< 15 {
             // Base this iteration of t1 calculated from last iteration
             t0 = t1
             // Calculate f(t0)
@@ -1724,7 +1725,7 @@ private extension CAMediaTimingFunction {
         // Create point array to point to
         var point: [Float] = [0.0, 0.0]
         var pointArray = [CGPoint]()
-        for (var i: Int = 0; i <= 3; i++) {
+        for i in 0 ..< 4 {
             self.getControlPointAtIndex(i, values: &point)
             pointArray.append(CGPoint(x: CGFloat(point[0]), y: CGFloat(point[1])))
         }

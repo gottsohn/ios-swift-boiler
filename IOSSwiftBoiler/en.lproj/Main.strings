@@ -33,7 +33,7 @@
 "KfQ-88-5tJ.text" = "About";
 
 /* Class = "UILabel"; text = "Beschreibung"; ObjectID = "LkC-06-lGI"; */
-"LkC-06-lGI.text" = "Beschreibung";
+"LkC-06-lGI.text" = "Description";
 
 /* Class = "UITableViewSection"; headerTitle = "User Account"; ObjectID = "MCX-Fu-B5T"; */
 "MCX-Fu-B5T.headerTitle" = "User Account";

@@ -36,7 +36,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     func webViewDidStartLoad(webView: UIWebView) {
         progressView.progress = 0.0
         progressView.hidden = false
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "timerCallback", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {

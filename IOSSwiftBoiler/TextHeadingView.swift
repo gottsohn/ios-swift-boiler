@@ -51,7 +51,7 @@ class TextHeadingView: UIView {
             view.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
             addSubview(view)
             textLabel = textLabel ?? view.subviews[0] as! UILabel
-            view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "tapAction:"))
+            view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapAction(_:))))
         }
     }
 }

@@ -24,7 +24,7 @@ class UserViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        notificationCenter.addObserver(self, selector: "loginStatusUpdated:", name: Const.NOTIFICATION_USER_AUTH, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(loginStatusUpdated(_:)), name: Const.NOTIFICATION_USER_AUTH, object: nil)
         
         populate()
     }

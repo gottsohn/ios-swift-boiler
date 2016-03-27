@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         window?.tintColor = UIColor.init(red: 1.0, green: 0.46, blue: 0.7, alpha: 1.0)
-        getUser()
+        
         if #available(iOS 9.0, *) {
             let login = UIApplicationShortcutItem(type: NSLocalizedString("OPEN", comment: "Open"), localizedTitle:NSLocalizedString("LOGIN", comment: "Login"), localizedSubtitle: "", icon: UIApplicationShortcutIcon(templateImageName: "lock"), userInfo: [Const.ACTION_LOGIN: true])
             
@@ -66,6 +66,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if !(Helpers.currentUser != nil) {
                 UIApplication.sharedApplication().shortcutItems?.append(login)
             }
+        }
+        
+        Helpers.async({
+            self.getUser()
+        }) {
+            
         }
         
         return true

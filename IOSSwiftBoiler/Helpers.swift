@@ -63,7 +63,7 @@ class Helpers {
     }
     
     static func async(run:()->(), completed:(()->())? = nil) {
-        let backgroundQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
+        let backgroundQueue = dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0)
         dispatch_async(backgroundQueue, {
             run()
             if completed != nil {

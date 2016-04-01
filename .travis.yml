@@ -1,4 +1,4 @@
-langnguage: swift
+langnguage: objective-c
 osx_image: xcode6.4
 xcode_workspace: IOSSwiftBoiler.xcworkspace
 xcode_scheme: IOSSwiftBoiler

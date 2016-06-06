@@ -48,4 +48,22 @@ On successful authentication, the user is redirected to the _HomeViewController_
  - 3D Touch for context menu
  - Settings View Controller.
 
+### Previews
+ - HomeViewController (not logged in)
+  - ![Logged out](./repo-data/home-not-logged-in.png)
+
+ - LoginViewController (not logged in)
+  - ![Logged out](./repo-data/login.png)
+
+ - HomeViewController (logged in)
+  - ![Logged in](./repo-data/home-logged-in.png)
+
+ - SettingsViewController (not logged in)
+  - ![Settings](./repo-data/settings.png)
+
+ - 3D Touch
+  - ![Settings](./repo-data/3d-touch-1.png)
+
+  - ![Settings](./repo-data/3d-touch-2.png)
+
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

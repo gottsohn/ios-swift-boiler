@@ -12,7 +12,7 @@
 "7yg-hm-3kv.headerTitle" = "Application";
 
 /* Class = "UILabel"; text = "Anmelden zu sehen guten Zeug"; ObjectID = "8jY-KN-yyH"; */
-"8jY-KN-yyH.text" = "Sign in to do cool something cool.";
+"8jY-KN-yyH.text" = "Login to view and manage your profile.";
 
 /* Class = "UILabel"; text = "Vollname"; ObjectID = "D1m-VS-UYP"; */
 "D1m-VS-UYP.text" = "Fullname";

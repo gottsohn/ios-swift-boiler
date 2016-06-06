@@ -49,21 +49,28 @@ On successful authentication, the user is redirected to the _HomeViewController_
  - Settings View Controller.
 
 ### Previews
- - HomeViewController (not logged in)
+#### HomeViewController (not logged in)
   ![Logged out](./repo-data/home-not-logged-in.png)
 
- - LoginViewController (not logged in)
+
+#### LoginViewController (not logged in)
   ![Logged out](./repo-data/login.gif)
 
- - HomeViewController (logged in)
+
+#### HomeViewController (logged in)
   ![Logged in](./repo-data/home-logged-in.png)
 
- - SettingsViewController (not logged in)
+
+#### SettingsViewController (not logged in)
   ![Settings](./repo-data/settings.png)
 
- - 3D Touch
+
+#### 3D Touch
   ![3d Touch context](./repo-data/3d-touch-1.png)
 
+
   ![3d Touch settings](./repo-data/3d-touch-2.png)
+
+
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

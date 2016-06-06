@@ -53,8 +53,8 @@ class WebViewControllerTests: XCTestCase {
         webViewController.url = "http://blog.godson.com.ng"
         _ = webViewController.view
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "checkProgress", userInfo: nil, repeats: false)
-        waitForExpectationsWithTimeout(10, handler: nil)
+        timer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: #selector(WebViewControllerTests.checkProgress), userInfo: nil, repeats: false)
+        waitForExpectationsWithTimeout(15, handler: nil)
     }
     
     func checkProgress() {

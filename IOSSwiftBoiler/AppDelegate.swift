@@ -46,7 +46,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 userJSON[Const.KEY_DESCRIPTION].stringValue = user.valueForKey(Const.KEY_DESCRIPTION) as! String
                 userJSON[Const.KEY_NAME].stringValue = user.valueForKey(Const.KEY_NAME) as! String
                 Helpers.currentUser = userJSON
-                NSNotificationCenter.defaultCenter().postNotificationName(Const.NOTIFICATION_USER_AUTH, object: nil)
+                Helpers.async {
+                    NSNotificationCenter.defaultCenter().postNotificationName(Const.NOTIFICATION_USER_AUTH, object: self, userInfo: [:])
+                }
             }
         }
     }
@@ -54,7 +56,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         window?.tintColor = UIColor.init(red: 1.0, green: 0.46, blue: 0.7, alpha: 1.0)
-        
         if #available(iOS 9.0, *) {
             let login = UIApplicationShortcutItem(type: NSLocalizedString("OPEN", comment: "Open"), localizedTitle:NSLocalizedString("LOGIN", comment: "Login"), localizedSubtitle: "", icon: UIApplicationShortcutIcon(templateImageName: "lock"), userInfo: [Const.ACTION_LOGIN: true])
             
@@ -70,9 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Helpers.async({
             self.getUser()
-        }) {
-            
-        }
+        })
         
         return true
     }

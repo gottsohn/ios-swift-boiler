@@ -30,6 +30,7 @@ public class OAuthSwiftHTTPRequest: NSObject, NSURLSessionDelegate {
     var HTTPBody: NSData?
 
     var request: NSMutableURLRequest?
+    var task: NSURLSessionTask?
     var session: NSURLSession!
 
     var headers: Dictionary<String, String>
@@ -73,14 +74,16 @@ public class OAuthSwiftHTTPRequest: NSObject, NSURLSessionDelegate {
     }
 
     init(request: NSURLRequest, paramsLocation : ParamsLocation = .AuthorizationHeader) {
-        self.request = request as? NSMutableURLRequest
+        self.request = request.mutableCopy() as? NSMutableURLRequest
+
         self.URL = request.URL!
         self.HTTPMethod = Method(rawValue: request.HTTPMethod ?? "") ?? .GET
-        self.headers = [:]
+        self.headers = request.allHTTPHeaderFields ?? [:]
         self.parameters = [:]
+        self.HTTPBody = request.HTTPBody
         self.dataEncoding = NSUTF8StringEncoding
-        self.timeoutInterval = 60
-        self.HTTPShouldHandleCookies = false
+        self.timeoutInterval = request.timeoutInterval
+        self.HTTPShouldHandleCookies = request.HTTPShouldHandleCookies
         self.responseData = NSMutableData()
         self.paramsLocation = paramsLocation
     }
@@ -105,7 +108,7 @@ public class OAuthSwiftHTTPRequest: NSObject, NSURLSessionDelegate {
             self.session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
                 delegate: self,
                 delegateQueue: NSOperationQueue.mainQueue())
-            let task: NSURLSessionDataTask = self.session.dataTaskWithRequest(self.request!) { [unowned self] data, response, error -> Void in
+            self.task = self.session.dataTaskWithRequest(self.request!) { [unowned self] data, response, error -> Void in
                 #if os(iOS)
                     #if !OAUTH_APP_EXTENSIONS
                         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
@@ -145,7 +148,7 @@ public class OAuthSwiftHTTPRequest: NSObject, NSURLSessionDelegate {
                 
                 self.successHandler?(data: self.responseData, response: self.response)
             }
-            task.resume()
+            self.task?.resume()
 
             #if os(iOS)
                 #if !OAUTH_APP_EXTENSIONS
@@ -154,6 +157,10 @@ public class OAuthSwiftHTTPRequest: NSObject, NSURLSessionDelegate {
             #endif
         }
     }
+
+	public func cancel() {
+		task?.cancel()
+	}
 
     public func makeRequest() throws -> NSMutableURLRequest {
         return try OAuthSwiftHTTPRequest.makeRequest(self.URL, method: self.HTTPMethod, headers: self.headers, parameters: self.parameters, dataEncoding: self.dataEncoding, body: self.HTTPBody, paramsLocation: self.paramsLocation)

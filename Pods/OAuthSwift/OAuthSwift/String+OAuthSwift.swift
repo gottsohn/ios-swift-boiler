@@ -26,14 +26,13 @@ extension String {
         get {
             let startIndex = self.startIndex.advancedBy(r.startIndex)
             let endIndex = startIndex.advancedBy(r.endIndex - r.startIndex)
-            
-            return self[Range(start: startIndex, end: endIndex)]
+            return self[startIndex..<endIndex]
         }
     }
 
     func urlEncodedStringWithEncoding(encoding: NSStringEncoding) -> String {
         let originalString: NSString = self
-        let customAllowedSet =  NSCharacterSet(charactersInString:" :/?&=;+!@#$()',*=\"#%/<>?@\\^`{|}").invertedSet
+        let customAllowedSet =  NSCharacterSet(charactersInString:"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~")
         let escapedString = originalString.stringByAddingPercentEncodingWithAllowedCharacters(customAllowedSet)
         return escapedString! as String
     }
@@ -47,9 +46,15 @@ extension String {
     }
 
     func dictionaryBySplitting(elementSeparator: String, keyValueSeparator: String) -> Dictionary<String, String> {
+		
+		var string = self
+		if(hasPrefix(elementSeparator)) {
+			string = String(characters.dropFirst(1))
+		}
+		
         var parameters = Dictionary<String, String>()
 
-        let scanner = NSScanner(string: self)
+        let scanner = NSScanner(string: string)
 
         var key: NSString?
         var value: NSString?

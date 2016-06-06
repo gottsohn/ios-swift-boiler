@@ -1,6 +1,6 @@
 # IOS Swift Boiler Plate with Authentication
 
-A boiler plate written in Swift 2.1 with _Facebook_ and _Twitter_ Authentication.
+A boiler plate written in Swift 2.2 with _Facebook_ and _Twitter_ Authentication.
 
 [![Build Status](https://travis-ci.org/gottsohn/ios-swift-boiler.svg?branch=master)](https://travis-ci.org/gottsohn/ios-swift-boiler) [![Coverage Status](https://coveralls.io/repos/github/gottsohn/ios-swift-boiler/badge.svg?branch=master)](https://coveralls.io/github/gottsohn/ios-swift-boiler?branch=master)
 
@@ -54,7 +54,8 @@ On successful authentication, the user is redirected to the _HomeViewController_
 
 -------
 
-#### LoginViewController (not logged in)
+#### LoginViewControllers
+The background video is located [here](./IOSSwiftBoiler/Assets/background.mp4)
   ![Logged out](./repo-data/login.gif)
 
 -------

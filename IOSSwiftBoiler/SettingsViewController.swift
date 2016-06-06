@@ -13,9 +13,8 @@ import CoreData
 class SettingsTableViewController: UITableViewController {
     
     let SONG_COUNT:Int = 30
-    var songs:[NSManagedObject]!
-    var url:String = "http://blog.godson.com.ng/terms-and-conditions/"
-    var labelText:String =  NSLocalizedString("TNC", comment: "TNC")
+    let url:String = "http://blog.godson.com.ng/terms-and-conditions/"
+    let labelText:String =  NSLocalizedString("TNC", comment: "TNC")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +65,7 @@ class SettingsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let alertMessage:String = NSLocalizedString("ARE_YOU_SURE", comment: "Are you sure")
         let alertTitle:String = NSLocalizedString("CONFIRM", comment: "Confirm")
         switch indexPath.section {

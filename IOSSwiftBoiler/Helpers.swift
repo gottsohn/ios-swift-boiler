@@ -62,22 +62,29 @@ class Helpers {
         }
     }
     
-    static func async(run:()->(), completed:(()->())? = nil) {
-        let backgroundQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
-        dispatch_async(backgroundQueue, {
-            run()
-            if completed != nil {
-                dispatch_sync(dispatch_get_main_queue(), {() -> Void in
-                    completed!()
-                })
+    static func async(run:(()->())? = nil, completed:(()->())? = nil) {
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), {
+            if run != nil {
+                run!()
             }
+            
+            dispatch_sync(dispatch_get_main_queue(), {
+                if completed != nil {
+                    completed!()
+                }
+            })
         })
     }
     
     internal static func getDataFromUrl(url:NSURL, completion: (data: NSData?, response: NSURLResponse?, error: NSError? ) -> ()) {
-        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
-            completion(data: data, response: response, error: error)
+        Helpers.async({
+            NSURLSession.sharedSession().dataTaskWithURL(url) {
+                data, response, error in
+                Helpers.async {
+                    completion(data: data, response: response, error: error)
+                }
             }.resume()
+        })
     }
     
     // Helper function to get image from internet
@@ -86,29 +93,27 @@ class Helpers {
         let nsURL = NSURL(string: url)
         self.getDataFromUrl(nsURL!) {
             data, response, error in
-            dispatch_async(dispatch_get_main_queue()) {
-                let noImage = UIImage(named: "no-image")
-                guard let data = data where error == nil else {
-                    if imageView != nil {
-                        imageView!.image = noImage
-                    }
-                    
-                    if callback != nil {
-                        callback!(error: error, image: noImage)
-                    }
-                    
-                    return
-                }
-                
-                let image = UIImage(data: data) ?? noImage
+            let noImage = UIImage(named: "no-image")
+            guard let data = data where error == nil else {
                 if imageView != nil {
-                    imageView!.image = image
+                    imageView!.image = noImage
                 }
                 
                 if callback != nil {
-                    callback!(error: nil, image: image)
+                    callback!(error: error, image: noImage)
                 }
+                
+                return
             }
+            
+            let image = UIImage(data: data) ?? noImage
+            if imageView != nil {
+                imageView!.image = image
+            }
+            
+            if callback != nil {
+                callback!(error: nil, image: image)
+            }            
         }
     }
 

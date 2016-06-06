@@ -26,7 +26,6 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Play background Video
         playBgVideo()
         

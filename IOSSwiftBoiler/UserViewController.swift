@@ -24,7 +24,7 @@ class UserViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        notificationCenter.addObserver(self, selector: #selector(loginStatusUpdated(_:)), name: Const.NOTIFICATION_USER_AUTH, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(loginStatusChange(_:)), name: Const.NOTIFICATION_USER_AUTH, object: nil)
         
         populate()
     }
@@ -50,12 +50,12 @@ class UserViewController: UIViewController {
         return .LightContent
     }
     
-    func loginStatusUpdated(notification: NSNotification) {
-        populate()
-    }
-    
     @IBAction func showLogin(sender: UIButton) {
     
+    }
+    
+    func loginStatusChange(notification: NSNotification) {
+        populate()
     }
     
     func populate() {

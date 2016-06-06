@@ -55,25 +55,27 @@ On successful authentication, the user is redirected to the _HomeViewController_
 -------
 
 #### LoginViewControllers
+
 The background video is located [here](./IOSSwiftBoiler/Assets/background.mp4)
-  ![Logged out](./repo-data/login.gif)
+
+![Logged out](./repo-data/login.gif)
 
 -------
 
 #### HomeViewController (logged in)
-  ![Logged in](./repo-data/home-logged-in.png)
+![Logged in](./repo-data/home-logged-in.png)
 
 -------
 
 #### SettingsViewController (not logged in)
-  ![Settings](./repo-data/settings.png)
+![Settings](./repo-data/settings.png)
 
 -------
 
 #### 3D Touch
-  ![3d Touch context](./repo-data/3d-touch-1.png)
+![3d Touch context](./repo-data/3d-touch-1.png)
 
-  ![3d Touch settings](./repo-data/3d-touch-2.png)
+![3d Touch settings](./repo-data/3d-touch-2.png)
 
 -------
 

@@ -17,24 +17,35 @@ The packages are staged as recommended to avoid framework support deprecation.
  - Facebook SDK (Core and Login)
 
 ### Localization
-English :us: and German are supported by the application, in _Localizable.strings_ and in the Storyboard's language files.
+English :us: and German :de: are supported by the application, in _Localizable.strings_ and in the Storyboard's language files.
 
 ### CoreData Entities
- - Users
-    - _name_: String
-    - _platform_: String
-    - _email_: String
-    - _user_id_: String
-    - _img_: String
-    - _oauth_token_: String
-    - _oauth_token_secret_: String
-    - _bg_img_: String
-    - _username_: String
-    - _desc_: String
+ - [Users](./IOSSwiftBoiler/Users.swift)
+    - _name_: `String`
+    - _platform_: `String`
+    - _email_: `String`
+    - _user_id_: `String`
+    - _img_: `String`
+    - _oauth_token_: `String`
+    - _oauth_token_secret_: `String`
+    - _bg_img_: `String`
+    - _username_: `String`
+    - _desc_: `String`
 
 ### Twitter and Facebook API keys
 The Twitter keys and secrets `TWITTER_KEY` and `TWITTER_SECRET` are found in lines _49_ and _50_ of [Const.swift](./IOSSwiftBoiler/Const.swift).
 
-The Facebook _APP_ID_ can be found in [Info.plist](./IOSSwiftBoiler/Info.plst) as `FacebookAppID` key.
+The Facebook _APP\_ID_ can be found in [Info.plist](./IOSSwiftBoiler/Info.plist) as `FacebookAppID` key.
+
+### How to use
+After launch, the application tries to get the user from the `Users` entity. If the user exists a View is displayed, and vice-versa.
+
+The currently logged in user is saved as a JSON object as `Helpers.currentUser`, where `Helpers` is a singleton.
+
+On successful authentication, the user is redirected to the _HomeViewController_ which now displays the user's profile details, and saves the user in the CoreData _Users_ entity.
+
+### Perks
+ - 3D Touch for context menu
+ - Settings View Controller.
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

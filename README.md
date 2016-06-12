@@ -2,6 +2,8 @@
 
 A boiler plate written in Swift 2.2 with _Facebook_ and _Twitter_ Authentication.
 
+[![Swift Version][swift-image]][swift-url]
+[![License][license-image]][license-url]
 [![Build Status](https://travis-ci.org/gottsohn/ios-swift-boiler.svg?branch=master)](https://travis-ci.org/gottsohn/ios-swift-boiler) [![Coverage Status](https://coveralls.io/repos/github/gottsohn/ios-swift-boiler/badge.svg?branch=master)](https://coveralls.io/github/gottsohn/ios-swift-boiler?branch=master)
 
 
@@ -73,11 +75,14 @@ The background video is located [here](./IOSSwiftBoiler/Assets/background.mp4)
 -------
 
 #### 3D Touch
-![3d Touch context](./repo-data/3d-touch-1.png)
-
-![3d Touch settings](./repo-data/3d-touch-2.png)
+![3d Touch context](./repo-data/3d-touch-1.png) ![3d Touch settings](./repo-data/3d-touch-2.png)
 
 -------
 
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+[swift-image]:https://img.shields.io/badge/swift-2.2-orange.svg
+[swift-url]: https://swift.org/
+[license-image]: https://img.shields.io/badge/License-MIT-blue.svg
+[license-url]: LICENSE.md

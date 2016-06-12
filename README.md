@@ -69,7 +69,7 @@ The background video is located [here](./IOSSwiftBoiler/Assets/background.mp4)
 
 -------
 
-#### SettingsViewController (not logged in)
+#### SettingsViewController
 ![Settings](./repo-data/settings.png)
 
 -------

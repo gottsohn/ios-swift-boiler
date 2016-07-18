@@ -142,7 +142,7 @@ public class OAuth2Swift: OAuthSwift {
         parameters["client_secret"] = self.consumer_secret
         parameters["code"] = code
         parameters["grant_type"] = "authorization_code"
-        parameters["redirect_uri"] = callbackURL.absoluteString.safeStringByRemovingPercentEncoding
+        parameters["redirect_uri"] = callbackURL.absoluteString!.safeStringByRemovingPercentEncoding
 
         requestOAuthAccessTokenWithParameters(parameters, success: success, failure: failure)
     }

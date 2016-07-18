@@ -191,7 +191,7 @@ public class OAuthSwiftCredential: NSObject, NSCoding {
         let parameterString = parameterComponents.joinWithSeparator("&")
         let encodedParameterString = parameterString.urlEncodedStringWithEncoding(OAuthSwiftDataEncoding)
         
-        let encodedURL = url.absoluteString.urlEncodedStringWithEncoding(OAuthSwiftDataEncoding)
+        let encodedURL = url.absoluteString!.urlEncodedStringWithEncoding(OAuthSwiftDataEncoding)
         
         let signatureBaseString = "\(method)&\(encodedURL)&\(encodedParameterString)"
         

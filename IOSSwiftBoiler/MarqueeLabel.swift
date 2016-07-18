@@ -161,11 +161,11 @@ public class MarqueeLabel: UILabel, CAAnimationDelegate {
      The "home" location is the traditional location of `UILabel` text. This property essentially reflects if a scroll animation is underway.
      */
     public var awayFromHome: Bool {
-        let presentationLayer = sublabel.layer.presentationLayer()! as CALayer
-        return !(presentationLayer.position.x == homeLabelFrame.origin.x)
+        if let presentationLayer = sublabel.layer.presentationLayer() {
+            return !(presentationLayer.position.x == homeLabelFrame.origin.x)
+        }
         
-        
-//        return false
+        return false
     }
     
     /**
@@ -630,7 +630,7 @@ public class MarqueeLabel: UILabel, CAAnimationDelegate {
             case .Duration(let duration):
                 return duration
             }
-            }()
+        }()
         
         // Configure gradient for current condition
         applyGradientMask(fadeLength, animated: !self.labelize)
@@ -990,8 +990,8 @@ public class MarqueeLabel: UILabel, CAAnimationDelegate {
         
         // Define values
         // Get current layer values
-        let mask = (maskLayer?.presentationLayer())! as CAGradientLayer
-        let currentValues = mask.colors as? [CGColorRef]
+        let mask = maskLayer?.presentationLayer()
+        let currentValues = mask?.colors as? [CGColorRef]
         
         switch (type) {
         case .ContinuousReverse:

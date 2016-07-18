@@ -8,7 +8,7 @@
 import UIKit
 import QuartzCore
 
-public class MarqueeLabel: UILabel {
+public class MarqueeLabel: UILabel, CAAnimationDelegate {
     
     /**
      An enum that defines the types of `MarqueeLabel` scrolling
@@ -161,11 +161,11 @@ public class MarqueeLabel: UILabel {
      The "home" location is the traditional location of `UILabel` text. This property essentially reflects if a scroll animation is underway.
      */
     public var awayFromHome: Bool {
-        if let presentationLayer = sublabel.layer.presentationLayer() as? CALayer {
-            return !(presentationLayer.position.x == homeLabelFrame.origin.x)
-        }
+        let presentationLayer = sublabel.layer.presentationLayer()! as CALayer
+        return !(presentationLayer.position.x == homeLabelFrame.origin.x)
         
-        return false
+        
+//        return false
     }
     
     /**
@@ -990,8 +990,8 @@ public class MarqueeLabel: UILabel {
         
         // Define values
         // Get current layer values
-        let mask = maskLayer?.presentationLayer() as? CAGradientLayer
-        let currentValues = mask?.colors as? [CGColorRef]
+        let mask = (maskLayer?.presentationLayer())! as CAGradientLayer
+        let currentValues = mask.colors as? [CGColorRef]
         
         switch (type) {
         case .ContinuousReverse:
@@ -1131,7 +1131,7 @@ public class MarqueeLabel: UILabel {
         }
     }
     
-    override public func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+    public func animationDidStop(anim: CAAnimation, finished flag: Bool) {
         if anim is GradientAnimation {
             if let setupAnim = maskLayer?.animationForKey("setupFade") as? CABasicAnimation, finalColors = setupAnim.toValue as? [CGColorRef] {
                 maskLayer?.colors = finalColors

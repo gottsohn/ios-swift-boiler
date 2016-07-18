@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             OAuthSwift.handleOpenURL(url)
         }
         
-        let isFacebookURL = url.scheme.hasPrefix("fb\(FBSDKSettings.appID())") && url.host == "authorize"
+        let isFacebookURL = url.scheme!.hasPrefix("fb\(FBSDKSettings.appID())") && url.host == "authorize"
         if isFacebookURL {
             return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
         }

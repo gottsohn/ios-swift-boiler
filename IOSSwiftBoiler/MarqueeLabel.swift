@@ -1021,10 +1021,10 @@ public class MarqueeLabel: UILabel, CAAnimationDelegate {
             
         case .Continuous:
             values = [
-                currentValues ?? [opaque, opaque, opaque, transp],           // Initial gradient
+                [opaque, opaque, opaque, transp],           // Initial gradient
                 [opaque, opaque, opaque, transp],           // Begin of fade in
-                [transp, opaque, opaque, transp],           // End of fade in, just as scroll away starts
-                [transp, opaque, opaque, transp],           // Begin of fade out, just before scroll home completes
+                [opaque, opaque, opaque, transp],           // Initial gradient
+                [opaque, opaque, opaque, transp],           // Begin of fade out, just before scroll home completes
                 [opaque, opaque, opaque, transp],           // End of fade out, as scroll home completes
                 [opaque, opaque, opaque, transp]            // Final "home" value
             ]

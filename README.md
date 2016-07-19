@@ -1,6 +1,6 @@
 # IOS Swift Boiler Plate with Authentication
 
-A boiler plate written in Swift 2.2 with _Facebook_ and _Twitter_ Authentication.
+A boiler plate written in Swift 2.3 with _Facebook_ and _Twitter_ Authentication.
 
 [![Swift Version][swift-image]][swift-url]
 [![License][license-image]][license-url]
@@ -13,7 +13,7 @@ The packages are staged as recommended to avoid framework support deprecation.
 
 ### Frameworks used
  - [CocoaPods](./Podfile)
-    - [Alamofire 3.0](https://github.com/Alamofire/Alamofire)
+    - [Alamofire 3.4.1](https://github.com/Alamofire/Alamofire)
     - [OAuthSwift 0.5.0](https://github.com/OAuthSwift/OAuthSwift)
     - [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
  - Facebook SDK (Core and Login)
@@ -82,7 +82,7 @@ The background video is located [here](./IOSSwiftBoiler/Assets/background.mp4)
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[swift-image]:https://img.shields.io/badge/swift-2.2-orange.svg
+[swift-image]:https://img.shields.io/badge/Swift-2.3-orange.svg
 [swift-url]: https://swift.org/
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: LICENSE.md

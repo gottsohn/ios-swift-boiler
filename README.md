@@ -13,8 +13,7 @@ The packages are staged as recommended to avoid framework support deprecation.
 
 ### Frameworks used
  - [CocoaPods](./Podfile)
-    - [Alamofire 3.0](https://github.com/Alamofire/Alamofire)
-    - [OAuthSwift 0.5.0](https://github.com/OAuthSwift/OAuthSwift)
+    - [Alamofire](https://github.com/Alamofire/Alamofire)
     - [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
  - Facebook SDK (Core and Login)
 
@@ -35,9 +34,9 @@ English :us: and German :de: are supported by the application, in _Localizable.s
     - _desc_: `String`
 
 ### Twitter and Facebook API keys
-The Twitter keys and secrets `TWITTER_KEY` and `TWITTER_SECRET` are found in lines _49_ and _50_ of [Const.swift](./IOSSwiftBoiler/Const.swift).
+The Facebook _APP\_ID_ can be found in [LoginViewController.swift](./IOSSwiftBoiler/LoginViewController.swift) in line _237_.
 
-The Facebook _APP\_ID_ can be found in [Info.plist](./IOSSwiftBoiler/Info.plist) as `FacebookAppID` key.
+Both Twitter and Facebook employ the Social.framework built into Xcode.
 
 ### How to use
 After launch, the application tries to get the user from the `Users` entity. If the user exists a View is displayed, and vice-versa.

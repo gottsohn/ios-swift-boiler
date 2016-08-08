@@ -29,6 +29,7 @@
 		0086820D1C9A3E680036D514 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 008682101C9A3E680036D514 /* Localizable.strings */; };
 		0086820E1C9A3E680036D514 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 008682101C9A3E680036D514 /* Localizable.strings */; };
 		00C2D2221C9AE376009265D7 /* WebViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2D2211C9AE376009265D7 /* WebViewControllerTests.swift */; };
+		00D886791D58D45D007FE97D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D886781D58D45D007FE97D /* Social.framework */; };
 		00F777DE1C9B5195002A6F43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00F777DD1C9B5195002A6F43 /* LaunchScreen.storyboard */; };
 		265B2B8132B5D5B130C18611 /* Pods_IOSSwiftBoilerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1108E27138AC46DF15521BFB /* Pods_IOSSwiftBoilerUITests.framework */; };
 		26B8E605F5C887E09CFF6F2B /* Pods_IOSSwiftBoiler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A74494CB94EAD9740FA6DF /* Pods_IOSSwiftBoiler.framework */; };
@@ -86,6 +87,7 @@
 		00AA72261CC7DF3400156CF2 /* OAuthSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuthSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/IOSSwiftBoiler-gqkpndcfqmxmqhcbooogdeeavegx/Build/Products/Debug-iphonesimulator/OAuthSwift.framework"; sourceTree = "<group>"; };
 		00AA72271CC7DF3400156CF2 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/IOSSwiftBoiler-gqkpndcfqmxmqhcbooogdeeavegx/Build/Products/Debug-iphonesimulator/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		00C2D2211C9AE376009265D7 /* WebViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewControllerTests.swift; sourceTree = "<group>"; };
+		00D886781D58D45D007FE97D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		00F777DD1C9B5195002A6F43 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02C140ADE50B1EA2CDFB1F7A /* Pods-IOSSwiftBoilerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSSwiftBoilerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOSSwiftBoilerUITests/Pods-IOSSwiftBoilerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1108E27138AC46DF15521BFB /* Pods_IOSSwiftBoilerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSSwiftBoilerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00D886791D58D45D007FE97D /* Social.framework in Frameworks */,
 				26B8E605F5C887E09CFF6F2B /* Pods_IOSSwiftBoiler.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,6 +246,7 @@
 		8FF80FF425996A20D8ED11FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00D886781D58D45D007FE97D /* Social.framework */,
 				00AA72251CC7DF3400156CF2 /* Alamofire.framework */,
 				00AA72261CC7DF3400156CF2 /* OAuthSwift.framework */,
 				00AA72271CC7DF3400156CF2 /* SwiftyJSON.framework */,
@@ -690,6 +694,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = IOSSwiftBoiler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.godson.IOSSwiftBoiler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -708,6 +713,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = IOSSwiftBoiler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.godson.IOSSwiftBoiler;
 				PRODUCT_NAME = "$(TARGET_NAME)";

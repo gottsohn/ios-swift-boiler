@@ -12,10 +12,10 @@
 "7yg-hm-3kv.headerTitle" = "Application";
 
 /* Class = "UILabel"; text = "Anmelden zu sehen guten Zeug"; ObjectID = "8jY-KN-yyH"; */
-"8jY-KN-yyH.text" = "Anmelden zu sehen guten Zeug";
+"8jY-KN-yyH.text" = "Login to view and manage your profile.";
 
 /* Class = "UILabel"; text = "Vollname"; ObjectID = "D1m-VS-UYP"; */
-"D1m-VS-UYP.text" = "Vollname";
+"D1m-VS-UYP.text" = "Fullname";
 
 /* Class = "UILabel"; text = "Terms and Conditions"; ObjectID = "FOZ-VJ-cdc"; */
 "FOZ-VJ-cdc.text" = "Terms and Conditions";
@@ -27,13 +27,13 @@
 "Jdm-YN-eJQ.text" = "--";
 
 /* Class = "UILabel"; text = "Anmelden"; ObjectID = "KZM-uP-oOP"; */
-"KZM-uP-oOP.text" = "Anmelden";
+"KZM-uP-oOP.text" = "Login";
 
 /* Class = "UILabel"; text = "About"; ObjectID = "KfQ-88-5tJ"; */
 "KfQ-88-5tJ.text" = "About";
 
 /* Class = "UILabel"; text = "Beschreibung"; ObjectID = "LkC-06-lGI"; */
-"LkC-06-lGI.text" = "Beschreibung";
+"LkC-06-lGI.text" = "Description";
 
 /* Class = "UITableViewSection"; headerTitle = "User Account"; ObjectID = "MCX-Fu-B5T"; */
 "MCX-Fu-B5T.headerTitle" = "User Account";
@@ -54,7 +54,7 @@
 "jhJ-xA-HOq.normalTitle" = "  Twitter";
 
 /* Class = "UILabel"; text = "Benutzername"; ObjectID = "mUK-g0-eZA"; */
-"mUK-g0-eZA.text" = "Benutzername";
+"mUK-g0-eZA.text" = "Username";
 
 /* Class = "UILabel"; text = "Schmetterling ist schön"; ObjectID = "pem-vk-42n"; */
 "pem-vk-42n.text" = "Schmetterling ist schön";

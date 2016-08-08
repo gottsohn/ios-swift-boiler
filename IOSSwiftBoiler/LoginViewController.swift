@@ -92,16 +92,67 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    func socialAccountAuth(identifier:String, options:
+        [NSObject: AnyObject]?, sender: UIButton) {
+        let account = ACAccountStore()
+        let accountType =
+            account.accountTypeWithAccountTypeIdentifier(identifier)
+        
+        account.requestAccessToAccountsWithType(accountType, options:
+            options,completion: { success, error in
+                
+            var urlString:String = "prefs:root="
+            if identifier == ACAccountTypeIdentifierTwitter {
+                urlString = "\(urlString)TWITTER"
+            } else {
+                urlString = "\(urlString)FACEBOOK"
+            }
+            
+            let url:NSURL! = NSURL(string : urlString)
+            if success {
+                let arrayOfAccounts =
+                    account.accountsWithAccountType(accountType).map({
+                        (account) -> ACAccount in
+                        
+                        return account as! ACAccount
+                    })
+                
+                if arrayOfAccounts.count > 0 {
+                    if arrayOfAccounts.count > 1 {
+                        Helpers.async {
+                            self.listAccounts(arrayOfAccounts, identifier:
+                                identifier, sender: sender)
+                        }
+                    } else {
+                        self.getSocialParams(arrayOfAccounts.first!,
+                            identifier: identifier)
+                    }
+                } else {
+                    UIApplication.sharedApplication().openURL(url)
+                }
+            } else {
+                self.loading(false)
+                if error.code == 6 {
+                    UIApplication.sharedApplication().openURL(url)
+                } else {
+                    Helpers.showError(self, error: error)
+                }
+            }
+        })
+    }
+
+    
     
     // Action from button to login with Facebook
     @IBAction func facebookAuth (sender: UIButton) {
-        loading(true)
-        loginToFacebookWithSuccess({ accessToken in
-            self.getFBUser(accessToken)
-            }) { error in
-                Helpers.showError(self, error: error)
-                self.loading(false)
-        }
+        socialAccountAuth(ACAccountTypeIdentifierFacebook, options: [
+            ACFacebookAppIdKey: "961478310602665",
+            ACFacebookAudienceKey: ACFacebookAudienceEveryone,
+            ACFacebookPermissionsKey: [
+                "basic_info",
+                "public_profile",
+                "email"]
+            ], sender: sender)
     }
     
     func getFBUser (accessToken:String) {

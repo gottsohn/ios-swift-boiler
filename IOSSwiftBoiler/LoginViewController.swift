@@ -239,7 +239,7 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
     func processFacebook(result:JSON, request: NSURLRequest) {
         if let userId = result[Const.KEY_ID].string {
             let bio:String = result[Const.KEY_FB_BIO].string ??
-            "Constantly on Replay.."
+                "Constantly on Replay.."
             
             let bgImg:String = result[Const.KEY_FB_COVER_IMG][Const.KEY_SOURCE].stringValue
             let name:String = result[Const.KEY_NAME].string ?? "Re-player"
@@ -255,42 +255,30 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
                     request.URLString, param: Const.KEY_ACCESS_TOKEN) ?? "",
                 Const.KEY_OAUTH_TOKEN_SECRET: "",
                 Const.KEY_PLATFORM: Const.Platforms.FACEBOOK,
-                Const.KEY_USERNAME: ""]
+                Const.KEY_USERNAME: ""
+            ]
             
-            self.saveUser(params)
+            saveUser(params)
         }
     }
     
-    func getFBUser (accessToken:String) {
-        let req = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,name,bio,cover"], tokenString: accessToken, version: nil, HTTPMethod: "GET")
+    func processTwitter(result:JSON, request: NSURLRequest) {
+        var params:[String:String] = [:]
+        let oauth = getToken(request.allHTTPHeaderFields!["Authorization"]!)
+        params[Const.KEY_IMG] = result[Const.KEY_TWITTER_IMG].stringValue
+        params[Const.KEY_BG_IMG] = result[Const.KEY_TWITTER_BG_IMG].stringValue
+        params[Const.KEY_NAME] = result[Const.KEY_NAME].stringValue
+        params[Const.KEY_EMAIL] = ""
+        params[Const.KEY_USER_ID] = result[Const.KEY_TWITTER_ID].stringValue
+        params[Const.KEY_OAUTH_TOKEN] = oauth.0
+        params[Const.KEY_OAUTH_TOKEN_SECRET] = oauth.1
+        params[Const.KEY_PLATFORM] = Const.Platforms.TWITTER
+        params[Const.KEY_DESCRIPTION] = result[Const.KEY_TWITTER_DESCRIPTION].stringValue
+        params[Const.KEY_USERNAME] = result[Const.KEY_TWITTER_HANDLE].stringValue
+        saveUser(params)
         
-        req.startWithCompletionHandler({ (connection, result, error : NSError!) -> Void in
-            if error == nil {
-                let userId = result[Const.KEY_ID] as! String;
-                let cover:NSDictionary =  result[Const.KEY_FB_COVER_IMG] as! NSDictionary
-                let bio: String = result[Const.KEY_FB_BIO] != nil ? result[Const.KEY_FB_BIO] as! String: "Diese ist mein Profil Beschreibung"
-                
-                let bg_img = cover["source"] as? String ?? ""
-                let params:[String: String] = [
-                    Const.KEY_NAME : result[Const.KEY_NAME] as! String,
-                    Const.KEY_EMAIL : result[Const.KEY_EMAIL] as! String,
-                    Const.KEY_IMG : "https://graph.facebook.com/\(userId)/picture?width=200&height=200",
-                    Const.KEY_USER_ID : userId,
-                    Const.KEY_BG_IMG: bg_img,
-                    Const.KEY_DESCRIPTION: bio,
-                    Const.KEY_OAUTH_TOKEN: accessToken,
-                    Const.KEY_OAUTH_TOKEN_SECRET: "",
-                    Const.KEY_PLATFORM: Const.Platforms.Facebook.rawValue,
-                    Const.KEY_USERNAME: ""
-                ]
-                
-                self.saveUser(params)
-            } else {
-                Helpers.showError(self, error: error)
-                self.loading(false)
-            }
-        })
     }
+
     
     func loginToFacebookWithSuccess(successBlock: (accessToken:String) -> (), failureBlock: (error:NSError?) -> ()) {
         
@@ -298,7 +286,13 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
             return successBlock(accessToken: FBSDKAccessToken.currentAccessToken().tokenString)
         }
         
-        let facebookReadPermissions = ["public_profile", "email", "user_friends", "user_about_me"]
+        let facebookReadPermissions = [
+            "public_profile",
+            "email",
+            "user_friends",
+            "user_about_me"
+        ]
+        
         FBSDKLoginManager().logInWithReadPermissions(facebookReadPermissions, fromViewController: self, handler: { (result:FBSDKLoginManagerLoginResult!, error:NSError!) -> Void in
             if error != nil {
                 FBSDKLoginManager().logOut()
@@ -331,53 +325,17 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // Action from button to login with Twitter
     @IBAction func twitterAuth (sender: UIButton) {
-        let oauthswift = OAuth1Swift(
-            // They keys are stored in the `Const` class
-            consumerKey:    Const.TWITTER_KEY,
-            consumerSecret: Const.TWITTER_SECRET,
-            requestTokenUrl: "https://api.twitter.com/oauth/request_token",
-            authorizeUrl:    "https://api.twitter.com/oauth/authorize",
-            accessTokenUrl:  "https://api.twitter.com/oauth/access_token"
-        )
-        
-        // Show the loading indicator
-        loading()
-        oauthswift.authorizeWithCallbackURL(
-            NSURL(string: "ios-swift-boiler://oauth-callback/twitter")!,
-            success: { credential, response, parameters in
-                oauthswift.client.get("https://api.twitter.com/1.1/account/verify_credentials.json", parameters: [:], headers: nil, success: { data, response in
-                    var params:[String:String] = [:]
-                    let result:JSON = JSON(data: data)
-                    params[Const.KEY_IMG] = result[Const.KEY_TWITTER_IMG].stringValue
-                    params[Const.KEY_BG_IMG] = result[Const.KEY_TWITTER_BG_IMG].stringValue
-                    params[Const.KEY_NAME] = result[Const.KEY_NAME].stringValue
-                    params[Const.KEY_EMAIL] = ""
-                    params[Const.KEY_USER_ID] = result[Const.KEY_TWITTER_ID].stringValue
-                    params[Const.KEY_OAUTH_TOKEN] = credential.oauth_token
-                    params[Const.KEY_OAUTH_TOKEN_SECRET] = credential.oauth_token_secret
-                    params[Const.KEY_PLATFORM] = Const.Platforms.Twitter.rawValue
-                    params[Const.KEY_DESCRIPTION] = result[Const.KEY_TWITTER_DESCRIPTION].stringValue
-                    params[Const.KEY_USERNAME] = result[Const.KEY_TWITTER_HANDLE].stringValue
-                    self.saveUser(params)
-                    }, failure: { error in
-                        Helpers.showError(self, error: error)
-                        self.loading(false)
-                })
-            },
-            
-            failure: { error in
-                print(error)
-                Helpers.showError(self, error: error)
-                self.loading(false)
-            }
-        )
+        socialAccountAuth(ACAccountTypeIdentifierTwitter, options:
+            nil, sender: sender)
     }
+    
     
     func saveUser(user:[String:String]) {
         Users.saveUser(authUser: JSON(user)) { error in
             if error == nil {
                 // Send a broadcast to inform concerning listeners that the user object as changed
-                self.notificationCenter.postNotificationName(Const.NOTIFICATION_USER_AUTH, object: nil)
+                self.notificationCenter.postNotificationName(
+                    Const.NOTIFICATION_USER_AUTH, object: nil)
                 // Close the view
                 self.dismissViewControllerAnimated(true, completion: nil)
             } else {

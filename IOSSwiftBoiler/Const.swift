@@ -47,11 +47,11 @@ class Const {
     static let KEY_PLATFORM:String = "platform"
     
     // Login Platforms
-    enum Platforms:String {
-        case Facebook = "facebook"
-        case Twitter = "twitter"
+    enum Platforms {
+        static let FACEBOOK:String = "facebook"
+        static let TWITTER:String = "twitter"
     }
-    
+
     // TWITTER APP SECRET
     static let TWITTER_KEY:String = "UNCDambMvAgmJ4u8cB8GmuxKA"
     static let TWITTER_SECRET:String = "sBaC5cUwbO8fVtjuXbFquldXXZ0NGmTn6KJxNNjXiLHxYbcnJH"

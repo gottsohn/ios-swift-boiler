@@ -27,10 +27,17 @@ class Const {
     static let KEY_SECRET:String = "secret"
     static let KEY_TOKEN:String = "token"
     static let KEY_OAUTH_TOKEN:String = "oauth_token"
+    static let KEY_SOURCE:String = "source"
+    static let KEY_ACCESS_TOKEN:String = "access_token"
     static let KEY_OAUTH_TOKEN_SECRET:String = "oauth_token_secret"
+    static let KEY_OAUTH_SIGNATURE:String = "oauth_signature"
     static let KEY_CREATED_AT:String = "created_at"
     static let KEY_IMG:String = "img"
     static let KEY_DESCRIPTION:String = "desc"
+    static let KEY_ERROR:String = "error"
+    static let KEY_CODE:String = "code"
+    static let KEY_MESSAGE:String = "message"
+    
     
     // User JSON Keys
     static let KEY_USER_ID:String = "user_id"
@@ -40,11 +47,11 @@ class Const {
     static let KEY_PLATFORM:String = "platform"
     
     // Login Platforms
-    enum Platforms:String {
-        case Facebook = "facebook"
-        case Twitter = "twitter"
+    enum Platforms {
+        static let FACEBOOK:String = "facebook"
+        static let TWITTER:String = "twitter"
     }
-    
+
     // TWITTER APP SECRET
     static let TWITTER_KEY:String = "UNCDambMvAgmJ4u8cB8GmuxKA"
     static let TWITTER_SECRET:String = "sBaC5cUwbO8fVtjuXbFquldXXZ0NGmTn6KJxNNjXiLHxYbcnJH"

@@ -7,6 +7,8 @@
 */
 CLOSE = "Schließen";
 ERROR = "Fehler";
+CHOOSE = "Wähle";
+ACCOUNT = "Konto";
 ERROR_MESSAGE = "Fehler Abschluss Anfrage";
 DONE = "Fertig";
 CANCEL = "Abbrechen";

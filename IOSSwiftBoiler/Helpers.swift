@@ -50,6 +50,14 @@ class Helpers {
         showDialog(view, message: errorMessage!, title: errorTitle!, callback: callback)
     }
     
+    static func getQueryStringParameter(url: String, param: String) -> String? {
+        let url = NSURLComponents(string: url)!
+        
+        return
+            (url.queryItems! as [NSURLQueryItem])
+                .filter({ (item) in item.name == param }).first?.value
+    }
+    
     static func saveManagedContext (view: UIViewController? = nil, context: NSManagedObjectContext, callback: (error: NSError?)->()) {
         do {
             try context.save()

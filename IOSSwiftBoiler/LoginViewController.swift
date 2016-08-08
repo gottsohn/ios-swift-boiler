@@ -30,7 +30,9 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
         playBgVideo()
         
         // Add Pull up / down Swipe to close to View
-        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panRecognized(_:)))
+        panGestureRecognizer = UIPanGestureRecognizer(target: self, action:
+            #selector(panRecognized(_:)))
+        
         panGestureRecognizer.delegate = self
         view.addGestureRecognizer(panGestureRecognizer)
     }
@@ -78,20 +80,25 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer : UIGestureRecognizer)->Bool {
+    func gestureRecognizer(gestureRecognizer:
+        UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer
+        otherGestureRecognizer : UIGestureRecognizer)->Bool {
+        
         return true
     }
     
     // Loading indicator that displays during loading
     private func loading(isLoading:Bool = true) {
-        controlView.hidden = isLoading
-        if isLoading {
-            loadingIndicator.startAnimating()
-        } else {
-            loadingIndicator.stopAnimating()
+        Helpers.async {
+            self.controlView.hidden = isLoading
+            if isLoading {
+                self.loadingIndicator.startAnimating()
+            } else {
+                self.loadingIndicator.stopAnimating()
+            }
         }
     }
-    
+  
     func socialAccountAuth(identifier:String, options:
         [NSObject: AnyObject]?, sender: UIButton) {
         let account = ACAccountStore()
@@ -99,45 +106,45 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
             account.accountTypeWithAccountTypeIdentifier(identifier)
         
         account.requestAccessToAccountsWithType(accountType, options:
-            options,completion: { success, error in
+            options, completion: {
+                success, error in
+                var urlString:String = "prefs:root="
+                if identifier == ACAccountTypeIdentifierTwitter {
+                    urlString = "\(urlString)TWITTER"
+                } else {
+                    urlString = "\(urlString)FACEBOOK"
+                }
                 
-            var urlString:String = "prefs:root="
-            if identifier == ACAccountTypeIdentifierTwitter {
-                urlString = "\(urlString)TWITTER"
-            } else {
-                urlString = "\(urlString)FACEBOOK"
-            }
-            
-            let url:NSURL! = NSURL(string : urlString)
-            if success {
-                let arrayOfAccounts =
-                    account.accountsWithAccountType(accountType).map({
-                        (account) -> ACAccount in
-                        
-                        return account as! ACAccount
-                    })
-                
-                if arrayOfAccounts.count > 0 {
-                    if arrayOfAccounts.count > 1 {
-                        Helpers.async {
-                            self.listAccounts(arrayOfAccounts, identifier:
-                                identifier, sender: sender)
+                let url:NSURL! = NSURL(string : urlString)
+                if success {
+                    let arrayOfAccounts =
+                        account.accountsWithAccountType(accountType).map({
+                            (account) -> ACAccount in
+                            
+                            return account as! ACAccount
+                        })
+                    
+                    if arrayOfAccounts.count > 0 {
+                        if arrayOfAccounts.count > 1 {
+                            Helpers.async {
+                                self.listAccounts(arrayOfAccounts, identifier:
+                                    identifier, sender: sender)
+                            }
+                        } else {
+                            self.getSocialParams(arrayOfAccounts.first!,
+                                identifier: identifier)
                         }
                     } else {
-                        self.getSocialParams(arrayOfAccounts.first!,
-                            identifier: identifier)
+                        UIApplication.sharedApplication().openURL(url)
                     }
                 } else {
-                    UIApplication.sharedApplication().openURL(url)
+                    self.loading(false)
+                    if error?.code == 6 {
+                        UIApplication.sharedApplication().openURL(url)
+                    } else {
+                        Helpers.showError(self, error: error)
+                    }
                 }
-            } else {
-                self.loading(false)
-                if error.code == 6 {
-                    UIApplication.sharedApplication().openURL(url)
-                } else {
-                    Helpers.showError(self, error: error)
-                }
-            }
         })
     }
     
@@ -183,7 +190,6 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
             
             Helpers.async {
                 Helpers.showError(self, error: _error)
-                print(_error)
                 self.loading(false)
             }
         }
@@ -253,7 +259,7 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
                 Const.KEY_BG_IMG: bgImg,
                 Const.KEY_DESCRIPTION: bio,
                 Const.KEY_OAUTH_TOKEN: Helpers.getQueryStringParameter(
-                    request.URLString, param: Const.KEY_ACCESS_TOKEN) ?? "",
+                    request.URL!.absoluteString, param: Const.KEY_ACCESS_TOKEN) ?? "",
                 Const.KEY_OAUTH_TOKEN_SECRET: "",
                 Const.KEY_PLATFORM: Const.Platforms.FACEBOOK,
                 Const.KEY_USERNAME: ""
@@ -291,17 +297,18 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
             nil, sender: sender)
     }
     
-    
     func saveUser(user:[String:String]) {
         Users.saveUser(authUser: JSON(user)) { error in
-            if error == nil {
-                // Send a broadcast to inform concerning listeners that the user object as changed
-                self.notificationCenter.postNotificationName(
-                    Const.NOTIFICATION_USER_AUTH, object: nil)
-                // Close the view
-                self.dismissViewControllerAnimated(true, completion: nil)
-            } else {
-                Helpers.showError(self, error: error)
+            Helpers.async {
+                if error != nil {
+                    Helpers.showError(self, error: error)
+                } else {
+                    // Send a broadcast to inform concerning listeners that the user object as changed
+                    self.notificationCenter.postNotificationName(
+                        Const.NOTIFICATION_USER_AUTH, object: nil)
+                    // Close the view
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
             }
         }
     }

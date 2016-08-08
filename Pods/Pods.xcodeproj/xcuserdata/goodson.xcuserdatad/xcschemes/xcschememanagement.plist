@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>OAuthSwift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-IOSSwiftBoiler.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +32,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1AECC3D56823D01ACD8481CF014302CE</key>
+		<key>03574FED60B7A9099FC1B209452E5182</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>45935B91DF0442390E2CA6DEEF68AE99</key>
+		<key>4D6AB23A8CBCC7AD3D0BDE9A504D0846</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,17 +47,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8504324AC3CBC2F8D01C6109E5A54185</key>
+		<key>9A86E758716D3983E4487C71970B055C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>90300572E179D6E2FE0F87459081F58A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C336A9159411B82E4E7693734409E064</key>
+		<key>F40DF9FCC0C1708D20F1FD179133367C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

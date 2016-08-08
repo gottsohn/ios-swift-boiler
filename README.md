@@ -34,7 +34,7 @@ English :us: and German :de: are supported by the application, in _Localizable.s
     - _desc_: `String`
 
 ### Twitter and Facebook API keys
-The Facebook _APP\_ID_ can be found in [LoginViewController.swift](./IOSSwiftBoiler/LoginViewController.swift) in line _237_.
+The Facebook _APP\_ID_ can be found in [LoginViewController.swift](./IOSSwiftBoiler/LoginViewController.swift#L237) in line _237_.
 
 Both Twitter and Facebook employ the Social.framework built into Xcode.
 

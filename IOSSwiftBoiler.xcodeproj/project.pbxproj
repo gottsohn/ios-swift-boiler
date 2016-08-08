@@ -55,7 +55,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		002A54961C9CC3B7007BB885 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		008681B01C9A355B0036D514 /* IOSSwiftBoiler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSSwiftBoiler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		008681B31C9A355B0036D514 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		008681B81C9A355B0036D514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,12 +81,13 @@
 		008682001C9A395B0036D514 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
 		0086820F1C9A3E680036D514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		008682111C9A3E6B0036D514 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		008682131C9A3EA90036D514 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		00AA72251CC7DF3400156CF2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/IOSSwiftBoiler-gqkpndcfqmxmqhcbooogdeeavegx/Build/Products/Debug-iphonesimulator/Alamofire.framework"; sourceTree = "<group>"; };
 		00AA72261CC7DF3400156CF2 /* OAuthSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuthSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/IOSSwiftBoiler-gqkpndcfqmxmqhcbooogdeeavegx/Build/Products/Debug-iphonesimulator/OAuthSwift.framework"; sourceTree = "<group>"; };
 		00AA72271CC7DF3400156CF2 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/IOSSwiftBoiler-gqkpndcfqmxmqhcbooogdeeavegx/Build/Products/Debug-iphonesimulator/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		00C2D2211C9AE376009265D7 /* WebViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewControllerTests.swift; sourceTree = "<group>"; };
 		00D886781D58D45D007FE97D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		00E4D5F91D58ED48002741E9 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		00E4D5FB1D58EDD9002741E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		00F777DD1C9B5195002A6F43 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02C140ADE50B1EA2CDFB1F7A /* Pods-IOSSwiftBoilerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSSwiftBoilerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOSSwiftBoilerUITests/Pods-IOSSwiftBoilerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1108E27138AC46DF15521BFB /* Pods_IOSSwiftBoilerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSSwiftBoilerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -581,8 +581,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				008681B81C9A355B0036D514 /* Base */,
-				008682131C9A3EA90036D514 /* en */,
-				002A54961C9CC3B7007BB885 /* de */,
+				00E4D5F91D58ED48002741E9 /* de */,
+				00E4D5FB1D58EDD9002741E9 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

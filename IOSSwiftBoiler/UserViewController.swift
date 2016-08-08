@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class UserViewController: UIViewController {
     
@@ -34,7 +35,7 @@ class UserViewController: UIViewController {
         Helpers.async({
             self.getUser()
         }) {
-            processLaunch()
+            self.processLaunch()
         }
     }
     

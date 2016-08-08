@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00807EEE1D3EFA0600C98B1F /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00807EED1D3EFA0600C98B1F /* OAuthSwift.framework */; };
+		00807EF01D3EFA2800C98B1F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00807EEF1D3EFA2800C98B1F /* SwiftyJSON.framework */; };
+		00807EF21D3EFA2D00C98B1F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00807EF11D3EFA2D00C98B1F /* Alamofire.framework */; };
 		008681B41C9A355B0036D514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008681B31C9A355B0036D514 /* AppDelegate.swift */; };
 		008681B91C9A355B0036D514 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 008681B71C9A355B0036D514 /* Main.storyboard */; };
 		008681BC1C9A355B0036D514 /* IOSSwiftBoiler.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 008681BA1C9A355B0036D514 /* IOSSwiftBoiler.xcdatamodeld */; };
@@ -53,6 +56,9 @@
 
 /* Begin PBXFileReference section */
 		002A54961C9CC3B7007BB885 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		00807EED1D3EFA0600C98B1F /* OAuthSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuthSwift.framework; path = "Pods/../build/Debug-iphoneos/OAuthSwift.framework"; sourceTree = "<group>"; };
+		00807EEF1D3EFA2800C98B1F /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		00807EF11D3EFA2D00C98B1F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		008681B01C9A355B0036D514 /* IOSSwiftBoiler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSSwiftBoiler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		008681B31C9A355B0036D514 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		008681B81C9A355B0036D514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,6 +106,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00807EF21D3EFA2D00C98B1F /* Alamofire.framework in Frameworks */,
+				00807EF01D3EFA2800C98B1F /* SwiftyJSON.framework in Frameworks */,
+				00807EEE1D3EFA0600C98B1F /* OAuthSwift.framework in Frameworks */,
 				008682041C9A39830036D514 /* FBSDKCoreKit.framework in Frameworks */,
 				008682051C9A39830036D514 /* FBSDKLoginKit.framework in Frameworks */,
 			);
@@ -239,6 +248,9 @@
 		8FF80FF425996A20D8ED11FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00807EF11D3EFA2D00C98B1F /* Alamofire.framework */,
+				00807EEF1D3EFA2800C98B1F /* SwiftyJSON.framework */,
+				00807EED1D3EFA0600C98B1F /* OAuthSwift.framework */,
 				00AA72251CC7DF3400156CF2 /* Alamofire.framework */,
 				00AA72261CC7DF3400156CF2 /* OAuthSwift.framework */,
 				00AA72271CC7DF3400156CF2 /* SwiftyJSON.framework */,
@@ -686,6 +698,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = IOSSwiftBoiler/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -706,6 +719,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = IOSSwiftBoiler/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

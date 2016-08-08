@@ -18,11 +18,11 @@ extension NSURL {
 
         var absoluteURLString = self.absoluteString
 
-        if absoluteURLString.hasSuffix("?") {
-            absoluteURLString = (absoluteURLString as NSString).substringToIndex(absoluteURLString.utf16.count - 1)
+        if absoluteURLString!.hasSuffix("?") {
+            absoluteURLString = (absoluteURLString! as NSString).substringToIndex(absoluteURLString!.utf16.count - 1)
         }
 
-        let URLString = absoluteURLString + (absoluteURLString.rangeOfString("?") != nil ? "&" : "?") + queryString
+        let URLString = absoluteURLString! + (absoluteURLString!.rangeOfString("?") != nil ? "&" : "?") + queryString
 
         return NSURL(string: URLString)!
     }

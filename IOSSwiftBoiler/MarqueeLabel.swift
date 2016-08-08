@@ -8,7 +8,7 @@
 import UIKit
 import QuartzCore
 
-public class MarqueeLabel: UILabel {
+public class MarqueeLabel: UILabel, CAAnimationDelegate {
     
     /**
      An enum that defines the types of `MarqueeLabel` scrolling
@@ -161,7 +161,7 @@ public class MarqueeLabel: UILabel {
      The "home" location is the traditional location of `UILabel` text. This property essentially reflects if a scroll animation is underway.
      */
     public var awayFromHome: Bool {
-        if let presentationLayer = sublabel.layer.presentationLayer() as? CALayer {
+        if let presentationLayer = sublabel.layer.presentationLayer() {
             return !(presentationLayer.position.x == homeLabelFrame.origin.x)
         }
         
@@ -630,7 +630,7 @@ public class MarqueeLabel: UILabel {
             case .Duration(let duration):
                 return duration
             }
-            }()
+        }()
         
         // Configure gradient for current condition
         applyGradientMask(fadeLength, animated: !self.labelize)
@@ -990,7 +990,7 @@ public class MarqueeLabel: UILabel {
         
         // Define values
         // Get current layer values
-        let mask = maskLayer?.presentationLayer() as? CAGradientLayer
+        let mask = maskLayer?.presentationLayer()
         let currentValues = mask?.colors as? [CGColorRef]
         
         switch (type) {
@@ -1021,10 +1021,10 @@ public class MarqueeLabel: UILabel {
             
         case .Continuous:
             values = [
-                currentValues ?? [opaque, opaque, opaque, transp],           // Initial gradient
+                [opaque, opaque, opaque, transp],           // Initial gradient
                 [opaque, opaque, opaque, transp],           // Begin of fade in
-                [transp, opaque, opaque, transp],           // End of fade in, just as scroll away starts
-                [transp, opaque, opaque, transp],           // Begin of fade out, just before scroll home completes
+                [opaque, opaque, opaque, transp],           // Initial gradient
+                [opaque, opaque, opaque, transp],           // Begin of fade out, just before scroll home completes
                 [opaque, opaque, opaque, transp],           // End of fade out, as scroll home completes
                 [opaque, opaque, opaque, transp]            // Final "home" value
             ]
@@ -1131,7 +1131,7 @@ public class MarqueeLabel: UILabel {
         }
     }
     
-    override public func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+    public func animationDidStop(anim: CAAnimation, finished flag: Bool) {
         if anim is GradientAnimation {
             if let setupAnim = maskLayer?.animationForKey("setupFade") as? CABasicAnimation, finalColors = setupAnim.toValue as? [CGColorRef] {
                 maskLayer?.colors = finalColors

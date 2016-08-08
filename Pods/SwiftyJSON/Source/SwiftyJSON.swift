@@ -118,7 +118,7 @@ public struct JSON {
     - returns: The created JSON
     */
     public init(_ jsonDictionary:[String: JSON]) {
-        var dictionary = [String: AnyObject](minimumCapacity: jsonDictionary.count)
+        var dictionary = [String: AnyObject]()
         for (key, json) in jsonDictionary {
             dictionary[key] = json.object
         }
@@ -235,7 +235,7 @@ extension JSON : Swift.CollectionType, Swift.SequenceType, Swift.Indexable {
         }
     }
 
-    /// If `type` is `.Array` or `.Dictionary`, return `array.isEmpty` or `dictonary.isEmpty` otherwise return `true`.
+    /// If `type` is `.Array` or `.Dictionary`, return `array.empty` or `dictonary.empty` otherwise return `true`.
     public var isEmpty: Bool {
         get {
             switch self.type {
@@ -396,9 +396,7 @@ public struct JSONGenerator : GeneratorType {
         switch self.type {
         case .Array:
             if let o = self.arrayGenerate?.next() {
-                let i = self.arrayIndex
-                self.arrayIndex += 1
-                return (String(i), JSON(o))
+                return (String(self.arrayIndex++), JSON(o))
             } else {
                 return nil
             }
@@ -442,7 +440,7 @@ extension String: JSONSubscriptType {
 
 extension JSON {
 
-    /// If `type` is `.Array`, return json whose object is `array[index]`, otherwise return null json with error.
+    /// If `type` is `.Array`, return json which's object is `array[index]`, otherwise return null json with error.
     private subscript(index index: Int) -> JSON {
         get {
             if self.type != .Array {
@@ -466,7 +464,7 @@ extension JSON {
         }
     }
 
-    /// If `type` is `.Dictionary`, return json whose object is `dictionary[key]` , otherwise return null json with error.
+    /// If `type` is `.Dictionary`, return json which's object is `dictionary[key]` , otherwise return null json with error.
     private subscript(key key: String) -> JSON {
         get {
             var r = JSON.null
@@ -537,7 +535,7 @@ extension JSON {
     }
 
     /**
-    Find a json in the complex data structures by using the Int/String's array.
+    Find a json in the complex data structuresby using the Int/String's array.
 
     - parameter path: The target json's path. Example:
 
@@ -598,7 +596,7 @@ extension JSON: Swift.FloatLiteralConvertible {
 extension JSON: Swift.DictionaryLiteralConvertible {
 
     public init(dictionaryLiteral elements: (String, AnyObject)...) {
-        self.init(elements.reduce([String : AnyObject](minimumCapacity: elements.count)){(dictionary: [String : AnyObject], element:(String, AnyObject)) -> [String : AnyObject] in
+        self.init(elements.reduce([String : AnyObject]()){(dictionary: [String : AnyObject], element:(String, AnyObject)) -> [String : AnyObject] in
             var d = dictionary
             d[element.0] = element.1
             return d
@@ -733,7 +731,7 @@ extension JSON {
     //Optional [String : JSON]
     public var dictionary: [String : JSON]? {
         if self.type == .Dictionary {
-            return self.rawDictionary.reduce([String : JSON](minimumCapacity: count)) { (dictionary: [String : JSON], element: (String, AnyObject)) -> [String : JSON] in
+            return self.rawDictionary.reduce([String : JSON]()) { (dictionary: [String : JSON], element: (String, AnyObject)) -> [String : JSON] in
                 var d = dictionary
                 d[element.0] = JSON(element.1)
                 return d
@@ -906,7 +904,7 @@ extension JSON {
             self.object = NSNull()
         }
     }
-    public func exists() -> Bool{
+    public func isExists() -> Bool{
         if let errorValue = error where errorValue.code == ErrorNotExist{
             return false
         }

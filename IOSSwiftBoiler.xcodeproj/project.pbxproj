@@ -25,8 +25,6 @@
 		008681F91C9A36820036D514 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008681ED1C9A36820036D514 /* UserViewController.swift */; };
 		008681FB1C9A36820036D514 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008681EF1C9A36820036D514 /* WebViewController.swift */; };
 		008682011C9A395B0036D514 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 008682001C9A395B0036D514 /* Assets */; };
-		008682041C9A39830036D514 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008682021C9A39830036D514 /* FBSDKCoreKit.framework */; };
-		008682051C9A39830036D514 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008682031C9A39830036D514 /* FBSDKLoginKit.framework */; };
 		0086820C1C9A3E680036D514 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 008682101C9A3E680036D514 /* Localizable.strings */; };
 		0086820D1C9A3E680036D514 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 008682101C9A3E680036D514 /* Localizable.strings */; };
 		0086820E1C9A3E680036D514 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 008682101C9A3E680036D514 /* Localizable.strings */; };
@@ -81,8 +79,6 @@
 		008681ED1C9A36820036D514 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		008681EF1C9A36820036D514 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		008682001C9A395B0036D514 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
-		008682021C9A39830036D514 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		008682031C9A39830036D514 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		0086820F1C9A3E680036D514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		008682111C9A3E6B0036D514 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		008682131C9A3EA90036D514 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -108,8 +104,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				008682041C9A39830036D514 /* FBSDKCoreKit.framework in Frameworks */,
-				008682051C9A39830036D514 /* FBSDKLoginKit.framework in Frameworks */,
 				26B8E605F5C887E09CFF6F2B /* Pods_IOSSwiftBoiler.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,8 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				008682101C9A3E680036D514 /* Localizable.strings */,
-				008682021C9A39830036D514 /* FBSDKCoreKit.framework */,
-				008682031C9A39830036D514 /* FBSDKLoginKit.framework */,
 				008681B21C9A355B0036D514 /* IOSSwiftBoiler */,
 				008681CA1C9A355B0036D514 /* IOSSwiftBoilerTests */,
 				008681D51C9A355B0036D514 /* IOSSwiftBoilerUITests */,
@@ -698,7 +690,6 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = IOSSwiftBoiler/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.godson.IOSSwiftBoiler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -717,7 +708,6 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = IOSSwiftBoiler/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.godson.IOSSwiftBoiler;
 				PRODUCT_NAME = "$(TARGET_NAME)";

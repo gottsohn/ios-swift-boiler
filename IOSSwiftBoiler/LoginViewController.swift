@@ -278,45 +278,6 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
         saveUser(params)
         
     }
-
-    
-    func loginToFacebookWithSuccess(successBlock: (accessToken:String) -> (), failureBlock: (error:NSError?) -> ()) {
-        
-        if FBSDKAccessToken.currentAccessToken() != nil {
-            return successBlock(accessToken: FBSDKAccessToken.currentAccessToken().tokenString)
-        }
-        
-        let facebookReadPermissions = [
-            "public_profile",
-            "email",
-            "user_friends",
-            "user_about_me"
-        ]
-        
-        FBSDKLoginManager().logInWithReadPermissions(facebookReadPermissions, fromViewController: self, handler: { (result:FBSDKLoginManagerLoginResult!, error:NSError!) -> Void in
-            if error != nil {
-                FBSDKLoginManager().logOut()
-                failureBlock(error: error)
-            } else if result.isCancelled {
-                failureBlock(error: nil)
-            } else {
-                var allPermsGranted = true
-                let grantedPermissions = result.grantedPermissions.map( {"\($0)"} )
-                for permission in facebookReadPermissions {
-                    if !grantedPermissions.contains(permission) {
-                        allPermsGranted = false
-                        break
-                    }
-                }
-                if allPermsGranted {
-                    // let fbUserID = result.token.userID
-                    successBlock(accessToken: result.token.tokenString)
-                } else {
-                    failureBlock(error: error)
-                }
-            }
-        })
-    }
     
     // Close View
     @IBAction func goHome (sender: UIButton) {

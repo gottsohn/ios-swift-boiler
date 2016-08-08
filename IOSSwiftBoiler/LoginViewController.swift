@@ -8,9 +8,10 @@
 
 import UIKit
 import MediaPlayer
-import FBSDKLoginKit
 import CoreData
+import Social
 import SwiftyJSON
+import Accounts
 
 class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
     

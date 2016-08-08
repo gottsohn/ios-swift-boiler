@@ -8,7 +8,6 @@
 
 import UIKit
 import MediaPlayer
-import OAuthSwift
 import FBSDKLoginKit
 import CoreData
 import SwiftyJSON
@@ -140,8 +139,90 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
             }
         })
     }
-
     
+    func getSocialParams(socialAccount: ACAccount, identifier:String) {
+        loading()
+        var serviceType:String = SLServiceTypeFacebook
+        var urlString:String = "https://graph.facebook.com/me"
+        var parameters:[String: String]? = ["fields": "email,cover,name,bio"]
+        if identifier == ACAccountTypeIdentifierTwitter {
+            serviceType = SLServiceTypeTwitter
+            urlString =
+            "https://api.twitter.com/1.1/account/verify_credentials.json"
+            
+            parameters = nil
+        }
+        
+        let url:NSURL? = NSURL(string: urlString)
+        let infoRequest:SLRequest = SLRequest(forServiceType:
+            serviceType, requestMethod: .GET, URL: url, parameters: parameters)
+        infoRequest.account = socialAccount
+        infoRequest.performRequestWithHandler { data, response, error in
+            var _error = error
+            if error == nil {
+                let result:JSON = JSON(data: data)
+                let errorResult = result[Const.KEY_ERROR]
+                if errorResult.isExists() {
+                    _error = NSError(domain:
+                        errorResult[Const.KEY_MESSAGE].stringValue, code:
+                        errorResult[Const.KEY_CODE].intValue, userInfo: nil)
+                } else {
+                    if identifier == ACAccountTypeIdentifierTwitter {
+                        self.processTwitter(result, request: infoRequest
+                            .preparedURLRequest())
+                    } else {
+                        self.processFacebook(result, request: infoRequest
+                            .preparedURLRequest())
+                    }
+                    
+                    return
+                }
+                
+            }
+            
+            Helpers.async {
+                Helpers.showError(self, error: _error)
+                print(_error)
+                self.loading(false)
+            }
+        }
+    }
+    
+    func listAccounts(accounts: [ACAccount], identifier: String, sender: UIButton) {
+        let optionMenu = UIAlertController(title: nil, message: "\(NSLocalizedString("CHOOSE", comment: "Choose")) \(NSLocalizedString("ACCOUNT", comment: "Account"))", preferredStyle: .ActionSheet)
+        
+        for account in accounts {
+            let title = identifier == ACAccountTypeIdentifierTwitter ?
+                "@\(account.username)" : account.userFullName
+            
+            let action = UIAlertAction(title: title, style: .Default, handler: {
+                (alert: UIAlertAction!) -> Void in
+                self.getSocialParams(account, identifier: identifier)
+            })
+            
+            optionMenu.addAction(action)
+        }
+        
+        optionMenu.addAction(UIAlertAction(title:
+            NSLocalizedString("CLOSE", comment: "Close"), style: .Cancel,
+            handler: nil))
+        
+        let popUpPresenter = optionMenu.popoverPresentationController
+        popUpPresenter?.sourceView = sender
+        popUpPresenter?.sourceRect = sender.bounds
+        presentViewController(optionMenu, animated: true, completion: nil)
+    }
+    
+    func getToken(string:String) -> (String, String) {
+        let strings = string.characters.split("=").map(String.init)
+        if strings.count > 6 {
+            let token = strings[5].characters.split("\"").map(String.init)[0]
+            let secret = strings[6].characters.split("\"").map(String.init)[0]
+            return (token, secret)
+        } else {
+            return ("", "")
+        }
+    }
     
     // Action from button to login with Facebook
     @IBAction func facebookAuth (sender: UIButton) {
@@ -153,6 +234,31 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
                 "public_profile",
                 "email"]
             ], sender: sender)
+    }
+    
+    func processFacebook(result:JSON, request: NSURLRequest) {
+        if let userId = result[Const.KEY_ID].string {
+            let bio:String = result[Const.KEY_FB_BIO].string ??
+            "Constantly on Replay.."
+            
+            let bgImg:String = result[Const.KEY_FB_COVER_IMG][Const.KEY_SOURCE].stringValue
+            let name:String = result[Const.KEY_NAME].string ?? "Re-player"
+            let email:String = result[Const.KEY_EMAIL].string ?? ""
+            let params:[String: String] = [
+                Const.KEY_NAME: name,
+                Const.KEY_EMAIL: email,
+                Const.KEY_IMG : "https://graph.facebook.com/\(userId)/picture?width=200&height=200",
+                Const.KEY_USER_ID : userId,
+                Const.KEY_BG_IMG: bgImg,
+                Const.KEY_DESCRIPTION: bio,
+                Const.KEY_OAUTH_TOKEN: Helpers.getQueryStringParameter(
+                    request.URLString, param: Const.KEY_ACCESS_TOKEN) ?? "",
+                Const.KEY_OAUTH_TOKEN_SECRET: "",
+                Const.KEY_PLATFORM: Const.Platforms.FACEBOOK,
+                Const.KEY_USERNAME: ""]
+            
+            self.saveUser(params)
+        }
     }
     
     func getFBUser (accessToken:String) {

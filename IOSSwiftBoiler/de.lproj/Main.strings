@@ -6,10 +6,10 @@
 "7VG-um-3zl.text" = " ";
 
 /* Class = "UITableViewSection"; footerTitle = "Visit blog.godson.com.ng from your Desktop Device"; ObjectID = "7yg-hm-3kv"; */
-"7yg-hm-3kv.footerTitle" = "Besuche http://gottsohn.github.io von Ihrem Desktop-Geräte";
+"7yg-hm-3kv.footerTitle" = "Visit blog.godson.com.ng from your Desktop Device";
 
 /* Class = "UITableViewSection"; headerTitle = "Application"; ObjectID = "7yg-hm-3kv"; */
-"7yg-hm-3kv.headerTitle" = "Applickation";
+"7yg-hm-3kv.headerTitle" = "Application";
 
 /* Class = "UILabel"; text = "Anmelden zu sehen guten Zeug"; ObjectID = "8jY-KN-yyH"; */
 "8jY-KN-yyH.text" = "Anmelden zu sehen guten Zeug";
@@ -18,7 +18,7 @@
 "D1m-VS-UYP.text" = "Vollname";
 
 /* Class = "UILabel"; text = "Terms and Conditions"; ObjectID = "FOZ-VJ-cdc"; */
-"FOZ-VJ-cdc.text" = "Geschäftsbedingungen";
+"FOZ-VJ-cdc.text" = "Terms and Conditions";
 
 /* Class = "UILabel"; text = "Swift Über Alles"; ObjectID = "FU9-lL-09k"; */
 "FU9-lL-09k.text" = "Swift Über Alles";
@@ -30,25 +30,25 @@
 "KZM-uP-oOP.text" = "Anmelden";
 
 /* Class = "UILabel"; text = "About"; ObjectID = "KfQ-88-5tJ"; */
-"KfQ-88-5tJ.text" = "Über";
+"KfQ-88-5tJ.text" = "About";
 
 /* Class = "UILabel"; text = "Beschreibung"; ObjectID = "LkC-06-lGI"; */
 "LkC-06-lGI.text" = "Beschreibung";
 
 /* Class = "UITableViewSection"; headerTitle = "User Account"; ObjectID = "MCX-Fu-B5T"; */
-"MCX-Fu-B5T.headerTitle" = "Benutzer Konto";
+"MCX-Fu-B5T.headerTitle" = "User Account";
 
 /* Class = "UILabel"; text = "Login"; ObjectID = "Omx-Ud-4dh"; */
-"Omx-Ud-4dh.text" = "Anmelden";
+"Omx-Ud-4dh.text" = "Login";
 
 /* Class = "UINavigationItem"; title = "Title"; ObjectID = "X4w-2M-Ny5"; */
-"X4w-2M-Ny5.title" = "Titel";
+"X4w-2M-Ny5.title" = "Title";
 
 /* Class = "UIButton"; normalTitle = "Go To Login"; ObjectID = "Zhu-o7-AfR"; */
-"Zhu-o7-AfR.normalTitle" = "Gehen Sie zu Anmelden";
+"Zhu-o7-AfR.normalTitle" = "Go To Login";
 
-/* Class = "UITextView"; text = "Login to view and manage your profile."; ObjectID = "i70-dk-yuS"; */
-"i70-dk-yuS.text" = "Anmelden Ihr Profil anzuzeigen und zu verwalten";
+/* Class = "UILabel"; text = "Login to view and manage your profile."; ObjectID = "ekl-V3-ydV"; */
+"ekl-V3-ydV.text" = "Login to view and manage your profile.";
 
 /* Class = "UIButton"; normalTitle = "  Twitter"; ObjectID = "jhJ-xA-HOq"; */
 "jhJ-xA-HOq.normalTitle" = "  Twitter";
@@ -60,10 +60,10 @@
 "pem-vk-42n.text" = "Schmetterling ist schön";
 
 /* Class = "UIButton"; normalTitle = "Later"; ObjectID = "qxC-rP-McH"; */
-"qxC-rP-McH.normalTitle" = "Später";
+"qxC-rP-McH.normalTitle" = "Later";
 
-/* Class = "UILabel"; text = "blog.godon.com.ng"; ObjectID = "tmc-ZG-eBr"; */
-"tmc-ZG-eBr.text" = "blog.godon.com.ng";
+/* Class = "UILabel"; text = "gottsohn.github.io"; ObjectID = "tmc-ZG-eBr"; */
+"tmc-ZG-eBr.text" = "gottsohn.github.io";
 
 /* Class = "UILabel"; text = "Version"; ObjectID = "wDh-ur-WBb"; */
 "wDh-ur-WBb.text" = "Version";

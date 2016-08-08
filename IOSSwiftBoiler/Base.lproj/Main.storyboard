@@ -19,14 +19,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view hidden="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D1F-Yi-EYr" userLabel="Inactive">
+                            <view hidden="YES" clearsContextBeforeDrawing="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D1F-Yi-EYr" userLabel="Inactive">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-large" translatesAutoresizingMaskIntoConstraints="NO" id="XF3-LF-s5U">
                                         <rect key="frame" x="220" y="70" width="160" height="160"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhu-o7-AfR">
-                                        <rect key="frame" x="10" y="340" width="570" height="34"/>
+                                        <rect key="frame" x="10" y="354" width="570" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Go To Login">
                                             <color key="titleColor" red="1" green="0.41176470590000003" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -39,25 +39,22 @@
                                             </segue>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Login to view and manage your profile." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="i70-dk-yuS">
-                                        <rect key="frame" x="180" y="260" width="240" height="50"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="1sv-MH-Ltv"/>
-                                            <constraint firstAttribute="width" constant="240" id="rVC-SX-4Z6"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to view and manage your profile." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekl-V3-ydV">
+                                        <rect key="frame" x="50" y="280" width="500" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="i70-dk-yuS" firstAttribute="top" secondItem="XF3-LF-s5U" secondAttribute="bottom" constant="30" id="6w6-Wd-7XR"/>
+                                    <constraint firstItem="Zhu-o7-AfR" firstAttribute="top" secondItem="ekl-V3-ydV" secondAttribute="bottom" constant="50" id="3M6-b4-ZsE"/>
+                                    <constraint firstItem="ekl-V3-ydV" firstAttribute="top" secondItem="XF3-LF-s5U" secondAttribute="bottom" constant="50" id="GjU-xt-PMe"/>
+                                    <constraint firstItem="ekl-V3-ydV" firstAttribute="leading" secondItem="D1F-Yi-EYr" secondAttribute="leading" constant="50" id="HXl-ex-4Uq"/>
                                     <constraint firstItem="XF3-LF-s5U" firstAttribute="centerX" secondItem="D1F-Yi-EYr" secondAttribute="centerX" id="LtV-rF-Mst"/>
-                                    <constraint firstItem="Zhu-o7-AfR" firstAttribute="top" secondItem="i70-dk-yuS" secondAttribute="bottom" constant="30" id="MWf-Dd-Brh"/>
                                     <constraint firstAttribute="trailing" secondItem="Zhu-o7-AfR" secondAttribute="trailing" constant="20" id="RrF-TV-5vF"/>
                                     <constraint firstItem="Zhu-o7-AfR" firstAttribute="leading" secondItem="D1F-Yi-EYr" secondAttribute="leading" constant="10" id="UrM-eD-JRf"/>
-                                    <constraint firstItem="i70-dk-yuS" firstAttribute="centerX" secondItem="D1F-Yi-EYr" secondAttribute="centerX" id="coR-J6-jIS"/>
+                                    <constraint firstAttribute="trailing" secondItem="ekl-V3-ydV" secondAttribute="trailing" constant="50" id="dtD-B0-P9W"/>
                                     <constraint firstItem="XF3-LF-s5U" firstAttribute="centerY" secondItem="D1F-Yi-EYr" secondAttribute="centerY" multiplier="1:2" id="r6G-8e-ydg"/>
                                 </constraints>
                             </view>

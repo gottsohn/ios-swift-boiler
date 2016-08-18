@@ -31,10 +31,9 @@
 		00C2D2221C9AE376009265D7 /* WebViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2D2211C9AE376009265D7 /* WebViewControllerTests.swift */; };
 		00D886791D58D45D007FE97D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D886781D58D45D007FE97D /* Social.framework */; };
 		00F777DE1C9B5195002A6F43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00F777DD1C9B5195002A6F43 /* LaunchScreen.storyboard */; };
-		265B2B8132B5D5B130C18611 /* Pods_IOSSwiftBoilerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1108E27138AC46DF15521BFB /* Pods_IOSSwiftBoilerUITests.framework */; };
-		26B8E605F5C887E09CFF6F2B /* Pods_IOSSwiftBoiler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A74494CB94EAD9740FA6DF /* Pods_IOSSwiftBoiler.framework */; };
-		3415A673E338431597BD3ADE /* Pods_IOSSwiftBoilerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880573A67BD4448800325928 /* Pods_IOSSwiftBoilerTests.framework */; };
-		FD8DF358F1D7A3F563EE813A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A7021E0947DBDD24B87661 /* Pods.framework */; };
+		7FC76EF8806B5046C3F1F8EB /* Pods_IOSSwiftBoiler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301BF09C1873BA9F53C8E4F7 /* Pods_IOSSwiftBoiler.framework */; };
+		B8673D24842EA8AF435C25AF /* Pods_IOSSwiftBoilerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D703D8542EF1DF98E048FBA /* Pods_IOSSwiftBoilerUITests.framework */; };
+		E19E145DBD8207397BC5F96E /* Pods_IOSSwiftBoilerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62C5854200214F1876FD712 /* Pods_IOSSwiftBoilerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0062D4F51D65F05000C3AAB1 /* Pods_IOSSwiftBoiler.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_IOSSwiftBoiler.framework; path = "Pods/../build/Debug-iphoneos/Pods_IOSSwiftBoiler.framework"; sourceTree = "<group>"; };
 		008681B01C9A355B0036D514 /* IOSSwiftBoiler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSSwiftBoiler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		008681B31C9A355B0036D514 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		008681B81C9A355B0036D514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -81,24 +81,20 @@
 		008682001C9A395B0036D514 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
 		0086820F1C9A3E680036D514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		008682111C9A3E6B0036D514 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		00AA72251CC7DF3400156CF2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/IOSSwiftBoiler-gqkpndcfqmxmqhcbooogdeeavegx/Build/Products/Debug-iphonesimulator/Alamofire.framework"; sourceTree = "<group>"; };
-		00AA72261CC7DF3400156CF2 /* OAuthSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuthSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/IOSSwiftBoiler-gqkpndcfqmxmqhcbooogdeeavegx/Build/Products/Debug-iphonesimulator/OAuthSwift.framework"; sourceTree = "<group>"; };
-		00AA72271CC7DF3400156CF2 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/IOSSwiftBoiler-gqkpndcfqmxmqhcbooogdeeavegx/Build/Products/Debug-iphonesimulator/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		00C2D2211C9AE376009265D7 /* WebViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewControllerTests.swift; sourceTree = "<group>"; };
 		00D886781D58D45D007FE97D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		00E4D5F91D58ED48002741E9 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		00E4D5FB1D58EDD9002741E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		00F777DD1C9B5195002A6F43 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		02C140ADE50B1EA2CDFB1F7A /* Pods-IOSSwiftBoilerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSSwiftBoilerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOSSwiftBoilerUITests/Pods-IOSSwiftBoilerUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		1108E27138AC46DF15521BFB /* Pods_IOSSwiftBoilerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSSwiftBoilerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		52C0E6DEB680749508C595BA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		65A402AF4CD40556A1C3B887 /* Pods-IOSSwiftBoilerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSSwiftBoilerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOSSwiftBoilerTests/Pods-IOSSwiftBoilerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		880573A67BD4448800325928 /* Pods_IOSSwiftBoilerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSSwiftBoilerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		99A74494CB94EAD9740FA6DF /* Pods_IOSSwiftBoiler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSSwiftBoiler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9E887D64F25997DBB2D7EB3A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		B8A7021E0947DBDD24B87661 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED2D7B1536507C88AC11B2B6 /* Pods-IOSSwiftBoilerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSSwiftBoilerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOSSwiftBoilerUITests/Pods-IOSSwiftBoilerUITests.release.xcconfig"; sourceTree = "<group>"; };
-		F303D18F6A40C9147968EE78 /* Pods-IOSSwiftBoilerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSSwiftBoilerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOSSwiftBoilerTests/Pods-IOSSwiftBoilerTests.release.xcconfig"; sourceTree = "<group>"; };
+		188745EF072477F2AD85F023 /* Pods-IOSSwiftBoilerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSSwiftBoilerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOSSwiftBoilerTests/Pods-IOSSwiftBoilerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1CE5E114E86EC48F61E8DFE3 /* Pods-IOSSwiftBoiler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSSwiftBoiler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOSSwiftBoiler/Pods-IOSSwiftBoiler.debug.xcconfig"; sourceTree = "<group>"; };
+		1D703D8542EF1DF98E048FBA /* Pods_IOSSwiftBoilerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSSwiftBoilerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		301BF09C1873BA9F53C8E4F7 /* Pods_IOSSwiftBoiler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSSwiftBoiler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9359E160F0560B157482281 /* Pods-IOSSwiftBoilerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSSwiftBoilerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOSSwiftBoilerUITests/Pods-IOSSwiftBoilerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BD8E06812BBBFA15FA8C289F /* Pods-IOSSwiftBoiler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSSwiftBoiler.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOSSwiftBoiler/Pods-IOSSwiftBoiler.release.xcconfig"; sourceTree = "<group>"; };
+		D8D20219001F90F65B2272FA /* Pods-IOSSwiftBoilerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSSwiftBoilerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOSSwiftBoilerUITests/Pods-IOSSwiftBoilerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EF59E6E6ED2FFAD04BDCC61B /* Pods-IOSSwiftBoilerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSSwiftBoilerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOSSwiftBoilerTests/Pods-IOSSwiftBoilerTests.release.xcconfig"; sourceTree = "<group>"; };
+		F62C5854200214F1876FD712 /* Pods_IOSSwiftBoilerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSSwiftBoilerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +103,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00D886791D58D45D007FE97D /* Social.framework in Frameworks */,
-				26B8E605F5C887E09CFF6F2B /* Pods_IOSSwiftBoiler.framework in Frameworks */,
+				7FC76EF8806B5046C3F1F8EB /* Pods_IOSSwiftBoiler.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,8 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3415A673E338431597BD3ADE /* Pods_IOSSwiftBoilerTests.framework in Frameworks */,
-				FD8DF358F1D7A3F563EE813A /* Pods.framework in Frameworks */,
+				E19E145DBD8207397BC5F96E /* Pods_IOSSwiftBoilerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				265B2B8132B5D5B130C18611 /* Pods_IOSSwiftBoilerUITests.framework in Frameworks */,
+				B8673D24842EA8AF435C25AF /* Pods_IOSSwiftBoilerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,12 +228,12 @@
 		8ACBA7E3DA407601A3228E09 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				52C0E6DEB680749508C595BA /* Pods.debug.xcconfig */,
-				9E887D64F25997DBB2D7EB3A /* Pods.release.xcconfig */,
-				65A402AF4CD40556A1C3B887 /* Pods-IOSSwiftBoilerTests.debug.xcconfig */,
-				F303D18F6A40C9147968EE78 /* Pods-IOSSwiftBoilerTests.release.xcconfig */,
-				02C140ADE50B1EA2CDFB1F7A /* Pods-IOSSwiftBoilerUITests.debug.xcconfig */,
-				ED2D7B1536507C88AC11B2B6 /* Pods-IOSSwiftBoilerUITests.release.xcconfig */,
+				1CE5E114E86EC48F61E8DFE3 /* Pods-IOSSwiftBoiler.debug.xcconfig */,
+				BD8E06812BBBFA15FA8C289F /* Pods-IOSSwiftBoiler.release.xcconfig */,
+				188745EF072477F2AD85F023 /* Pods-IOSSwiftBoilerTests.debug.xcconfig */,
+				EF59E6E6ED2FFAD04BDCC61B /* Pods-IOSSwiftBoilerTests.release.xcconfig */,
+				D8D20219001F90F65B2272FA /* Pods-IOSSwiftBoilerUITests.debug.xcconfig */,
+				B9359E160F0560B157482281 /* Pods-IOSSwiftBoilerUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -246,14 +241,11 @@
 		8FF80FF425996A20D8ED11FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0062D4F51D65F05000C3AAB1 /* Pods_IOSSwiftBoiler.framework */,
 				00D886781D58D45D007FE97D /* Social.framework */,
-				00AA72251CC7DF3400156CF2 /* Alamofire.framework */,
-				00AA72261CC7DF3400156CF2 /* OAuthSwift.framework */,
-				00AA72271CC7DF3400156CF2 /* SwiftyJSON.framework */,
-				B8A7021E0947DBDD24B87661 /* Pods.framework */,
-				99A74494CB94EAD9740FA6DF /* Pods_IOSSwiftBoiler.framework */,
-				880573A67BD4448800325928 /* Pods_IOSSwiftBoilerTests.framework */,
-				1108E27138AC46DF15521BFB /* Pods_IOSSwiftBoilerUITests.framework */,
+				301BF09C1873BA9F53C8E4F7 /* Pods_IOSSwiftBoiler.framework */,
+				F62C5854200214F1876FD712 /* Pods_IOSSwiftBoilerTests.framework */,
+				1D703D8542EF1DF98E048FBA /* Pods_IOSSwiftBoilerUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -444,7 +436,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IOSSwiftBoilerTests/Pods-IOSSwiftBoilerTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5034E075ECA609E03FE68452 /* Embed Pods Frameworks */ = {
@@ -684,7 +676,7 @@
 		};
 		008681DC1C9A355B0036D514 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65A402AF4CD40556A1C3B887 /* Pods-IOSSwiftBoilerTests.debug.xcconfig */;
+			baseConfigurationReference = 1CE5E114E86EC48F61E8DFE3 /* Pods-IOSSwiftBoiler.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -692,6 +684,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = IOSSwiftBoiler/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -703,7 +696,7 @@
 		};
 		008681DD1C9A355B0036D514 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F303D18F6A40C9147968EE78 /* Pods-IOSSwiftBoilerTests.release.xcconfig */;
+			baseConfigurationReference = BD8E06812BBBFA15FA8C289F /* Pods-IOSSwiftBoiler.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -711,6 +704,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = IOSSwiftBoiler/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -722,7 +716,7 @@
 		};
 		008681DF1C9A355B0036D514 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65A402AF4CD40556A1C3B887 /* Pods-IOSSwiftBoilerTests.debug.xcconfig */;
+			baseConfigurationReference = 188745EF072477F2AD85F023 /* Pods-IOSSwiftBoilerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = IOSSwiftBoilerTests/Info.plist;
@@ -735,7 +729,7 @@
 		};
 		008681E01C9A355B0036D514 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F303D18F6A40C9147968EE78 /* Pods-IOSSwiftBoilerTests.release.xcconfig */;
+			baseConfigurationReference = EF59E6E6ED2FFAD04BDCC61B /* Pods-IOSSwiftBoilerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = IOSSwiftBoilerTests/Info.plist;
@@ -748,7 +742,7 @@
 		};
 		008681E21C9A355B0036D514 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02C140ADE50B1EA2CDFB1F7A /* Pods-IOSSwiftBoilerUITests.debug.xcconfig */;
+			baseConfigurationReference = D8D20219001F90F65B2272FA /* Pods-IOSSwiftBoilerUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = IOSSwiftBoilerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -761,7 +755,7 @@
 		};
 		008681E31C9A355B0036D514 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED2D7B1536507C88AC11B2B6 /* Pods-IOSSwiftBoilerUITests.release.xcconfig */;
+			baseConfigurationReference = B9359E160F0560B157482281 /* Pods-IOSSwiftBoilerUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = IOSSwiftBoilerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-IOSSwiftBoiler.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>03574FED60B7A9099FC1B209452E5182</key>
+		<key>7FCC0620FA940C3C269AC632A35CB72F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4D6AB23A8CBCC7AD3D0BDE9A504D0846</key>
+		<key>A2A784E9F6208843245E793EFBCBFE0D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<key>B786254F7251C342BACB8DA2FA3F5C9A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9A86E758716D3983E4487C71970B055C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F40DF9FCC0C1708D20F1FD179133367C</key>
+		<key>EEC3FE6DE35630597660DDB2F64CF0D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

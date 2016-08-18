@@ -4,7 +4,6 @@ platform :ios, '8.0'
 use_frameworks!
 
 def all_pods
-    pod 'Alamofire'
     pod 'SwiftyJSON'
 end
 

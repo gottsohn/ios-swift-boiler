@@ -14,7 +14,8 @@ matrix:
         - sudo apt-get install -y clang libicu-dev
         - ./install-linux-swift.sh
         - export PATH="/swift/usr/bin:${PATH}"
-        - pod install
+        - sudo gem install cocoapods
       script:
+        - pod install
         - swift build -v
         - swift test

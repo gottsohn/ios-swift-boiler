@@ -4,25 +4,25 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-IOSSwiftBoiler.xcscheme</key>
+		<key>Pods-IOSSwiftBoiler.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 		</dict>
-		<key>Pods-IOSSwiftBoilerTests.xcscheme</key>
+		<key>Pods-IOSSwiftBoilerTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 		</dict>
-		<key>Pods-IOSSwiftBoilerUITests.xcscheme</key>
+		<key>Pods-IOSSwiftBoilerUITests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 		</dict>
-		<key>SwiftyJSON.xcscheme</key>
+		<key>SwiftyJSON.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
